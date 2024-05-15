@@ -1,6 +1,6 @@
 from PyQt5 import uic
 from PyQt5.QtMultimedia import QCameraInfo
-from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
+from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QFileDialog
 from PyQt5.QtCore import QThread, pyqtSignal, QTimer, pyqtSlot, QDateTime, Qt
 from PyQt5.QtGui import QImage, QPixmap, QPainter, QPen
 import cv2
@@ -8,7 +8,9 @@ import numpy as np
 import psutil
 import sys
 import sysinfo
+from PIL import Image, ImageOps
 import tensorflow as tf
+from keras.models import load_model
 import time
 import importlib.util
 from threading import Thread
@@ -45,6 +47,7 @@ class VideoStream:
 # Parameter input langsung di dalam kode
 MODEL_PATH = "./models/detectObject/model.tflite"
 LABEL_PATH = "./models/detectObject/labels.txt"
+LABEL_KLASIFIKASI = "./models/modelA/class_names_legena_2.txt"
 min_conf_threshold = 0.5
 resW, resH = '640', '480'
 imW, imH = int(resW), int(resH)
@@ -66,6 +69,11 @@ with open(LABEL_PATH, 'r') as f:
     labels = [line.strip() for line in f.readlines()]
 if labels[0] == '???':
     del(labels[0])
+    
+with open(LABEL_KLASIFIKASI, 'r') as f:
+    labels_klasifikasi = [line.strip() for line in f.readlines()]
+if labels_klasifikasi[0] == '???':
+    del(labels_klasifikasi[0])
 
 if use_TPU:
     interpreter = Interpreter(model_path=MODEL_PATH, experimental_delegates=[load_delegate('libedgetpu.so.1.0')])
@@ -116,6 +124,18 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.ui = uic.loadUi("Main_Window.ui",self)
+        # ===================================================================================
+        # Bagian TAB 2 | Klasification
+        # ===================================================================================
+        # masalah file
+        self.file_ready = ""
+        self.btn_resource_storage.clicked.connect(self.resource_storage)
+        self.btn_predict.clicked.connect(self.klasifikasi_aksara)
+        
+        # ===================================================================================
+        # Bagian TAB 3 | Object Detection
+        # ===================================================================================
+        
         self.textEdit.append(f"{QDateTime.currentDateTime().toString('d MMMM yy hh:mm:ss')}: Load model")
         self.textEdit.append(f"{QDateTime.currentDateTime().toString('d MMMM yy hh:mm:ss')}: Model loaded")
         
@@ -149,6 +169,104 @@ class MainWindow(QMainWindow):
         self.slider_green.valueChanged.connect(self.set_green)
         self.slider_blue.valueChanged.connect(self.set_blue)
     
+    # ====================================================================================
+    # Bagian TAB 2 | Klasification
+    # ====================================================================================
+    def resource_storage(self):
+        fname = QFileDialog.getOpenFileName(self, 'Open File','E:', 'Image Files (*.png *.jpg *.jpeg)')
+        self.textEdit_klasifikasi.append(f"{QDateTime.currentDateTime().toString('d MMMM yy hh:mm:ss')}: File loaded: {fname[0]}")
+        self.file_ready = fname[0]
+        self.show_image()
+        
+    def show_image(self):
+        self.img = cv2.imread(self.file_ready)
+        self.img = cv2.resize(self.img, (400,400))
+        self.img = cv2.cvtColor(self.img, cv2.COLOR_BGR2RGB)
+        h, w, ch = self.img.shape
+        bytes_per_line = ch * w
+        convert_to_Qt_format = QImage(self.img.data, w, h, bytes_per_line, QImage.Format_RGB888)
+        pixmap = QPixmap.fromImage(convert_to_Qt_format)
+        self.disp_klasifikasi.setPixmap(pixmap)
+        self.disp_klasifikasi.setScaledContents(True)
+        self.disp_klasifikasi.setFixedSize(400, 400)
+        
+    def klasifikasi_aksara(self):
+        arr_pred = []
+        if self.ckb_densenet.isChecked():
+            self.textEdit_klasifikasi.append(f"{QDateTime.currentDateTime().toString('d MMMM yy hh:mm:ss')}: Proses predict from model DenseNet121")
+            model = self.load_my_model("./models/modelA/model_densenet121_20eph.h5")
+            self.textEdit_klasifikasi.append(f"{QDateTime.currentDateTime().toString('d MMMM yy hh:mm:ss')}: Proses predict from model DenseNet121 | Load model success")
+            predict_class, skor = self.klasifikasi(model)
+            arr_pred.append([predict_class, skor])
+            
+        if self.ckb_efficientnet.isChecked():
+            self.textEdit_klasifikasi.append(f"{QDateTime.currentDateTime().toString('d MMMM yy hh:mm:ss')}: Proses predict from model Efficientnet")
+            model = self.load_my_model("./models/modelA/model_efficientnet_20eph.h5")
+            self.textEdit_klasifikasi.append(f"{QDateTime.currentDateTime().toString('d MMMM yy hh:mm:ss')}: Proses predict from model Efficientnet | Load model success")
+            predict_class, skor = self.klasifikasi(model)
+            arr_pred.append([predict_class, skor])
+            
+        if self.ckb_inception.isChecked():
+            self.textEdit_klasifikasi.append(f"{QDateTime.currentDateTime().toString('d MMMM yy hh:mm:ss')}: Proses predict from model Inception")
+            model = self.load_my_model("./models/modelA/model_inception_20eph.h5")
+            self.textEdit_klasifikasi.append(f"{QDateTime.currentDateTime().toString('d MMMM yy hh:mm:ss')}: Proses predict from model Inception | Load model success")
+            predict_class, skor = self.klasifikasi(model)
+            arr_pred.append([predict_class, skor])
+            
+        if self.ckb_mobilenet.isChecked():
+            self.klasifikasi()
+        if self.ckb_restnet.isChecked():
+            self.klasifikasi()
+        if self.ckb_vgg.isChecked():
+            self.klasifikasi()
+        if self.ckb_xception.isChecked():
+            self.klasifikasi()
+        
+        if len(arr_pred) > 0:
+            max_value = max(arr_pred, key=lambda x: float(x[1]))
+            label_terbesar = max_value[0]
+            nilai_terbesar = max_value[1]
+        else:
+            label_terbesar = arr_pred[0]
+            nilai_terbesar = arr_pred[1]
+        print(arr_pred)
+        print(label_terbesar,nilai_terbesar)
+            
+    def load_my_model(self, model_path):
+        model = load_model(model_path)
+        return model
+    
+    def klasifikasi(self,model):
+        size = (224, 224)
+        self.textEdit_klasifikasi.append(f"{QDateTime.currentDateTime().toString('d MMMM yy hh:mm:ss')}: Proses predict | Read image resource")
+        image_loaded = Image.open(self.file_ready).convert("RGB")
+        image = ImageOps.fit(image_loaded, size, Image.Resampling.LANCZOS)
+
+        # convert image to array
+        image_array = np.asarray(image)
+
+        # Normalize the image
+        normalized_image_array = (image_array.astype(np.float32) / 127.5) - 1
+
+        # set model input
+        data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
+
+        # Load the image into the array
+        data[0] = normalized_image_array
+
+        prediction = model.predict(data)
+        index = np.argmax(prediction)
+        predict_class = labels_klasifikasi[index]
+        confidence_score = prediction[0][index]
+        skor_dua_angka = "{:.2f}".format(confidence_score)
+        return predict_class,skor_dua_angka
+        
+        
+    
+    # ====================================================================================
+    # Bagian TAB 3 | Object Detection
+    # ====================================================================================
+    
     def StartWebCam(self):
         try:
             self.btn_stop.setEnabled(True)
@@ -162,6 +280,7 @@ class MainWindow(QMainWindow):
 
         except Exception as error :
             pass
+    
     def StopWebcam(self):
         currentDateTime = QDateTime.currentDateTime()
         self.textEdit.append(f"{currentDateTime.toString('d MMMM yy hh:mm:ss')}: Stop Webcam ({self.camlist.currentText()})")
@@ -170,7 +289,6 @@ class MainWindow(QMainWindow):
         if hasattr(self, 'videostream'):
             self.videostream.stop()
         self.timer.stop()  # Menghentikan QTimer yang memicu deteksi dan tampilan
-        
         
     def detect_and_display(self):
         global frame_rate_calc
@@ -309,6 +427,7 @@ class MainWindow(QMainWindow):
         else:
             event.ignore()
         
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = MainWindow()
