@@ -295,6 +295,7 @@ class MainWindow(QMainWindow):
     def clock(self):
         self.DateTime = QDateTime.currentDateTime()
         self.lcd_clock.display(self.DateTime.toString('hh:mm:ss'))
+        self.lcd_clock_2.display(self.DateTime.toString('hh:mm:ss'))
 
     def closeEvent(self, event):
         reply = QMessageBox.question(self, 'Window Close', 'Apakah Anda yakin ingin menutup aplikasi?',
