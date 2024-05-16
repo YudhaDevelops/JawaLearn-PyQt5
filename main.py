@@ -44,10 +44,27 @@ class VideoStream:
     def stop(self):
         self.stopped = True
 
+# klasifikasi model
+print("============== Load Label Klasifikasi ==============")
+LABEL_KLASIFIKASI = "./models/modelA/class_names_legena_2.txt"
+with open(LABEL_KLASIFIKASI, 'r') as f:
+    labels_klasifikasi = [line.strip() for line in f.readlines()]
+if labels_klasifikasi[0] == '???':
+    del(labels_klasifikasi[0])
+    
+print("============== Load Model Klasifikasi ==============")
+model_densenet = load_model("./models/modelA/model_densenet121_20eph.h5")
+model_efficientnet = load_model("./models/modelA/model_efficientnet_20eph.h5")
+model_inception = load_model("./models/modelA/model_inception_20eph.h5")
+model_mobilenet = load_model("./models/modelA/model_mobilenetv2_20eph.h5")
+model_resnet = load_model("./models/modelA/model_resnet50_20eph.h5")
+model_vgg = load_model("./models/modelA/model_vgg_20eph.h5")
+model_xception = load_model("./models/modelA/model_xception_20eph.h5")
+
+
 # Parameter input langsung di dalam kode
 MODEL_PATH = "./models/detectObject/model.tflite"
 LABEL_PATH = "./models/detectObject/labels.txt"
-LABEL_KLASIFIKASI = "./models/modelA/class_names_legena_2.txt"
 min_conf_threshold = 0.5
 resW, resH = '640', '480'
 imW, imH = int(resW), int(resH)
@@ -64,17 +81,14 @@ else:
     if use_TPU:
         from tensorflow.lite.python.interpreter import load_delegate
 
+print("============== Load Label Object Detection ==============")
 # Load the label map
 with open(LABEL_PATH, 'r') as f:
     labels = [line.strip() for line in f.readlines()]
 if labels[0] == '???':
     del(labels[0])
     
-with open(LABEL_KLASIFIKASI, 'r') as f:
-    labels_klasifikasi = [line.strip() for line in f.readlines()]
-if labels_klasifikasi[0] == '???':
-    del(labels_klasifikasi[0])
-
+print("============== Load Model Object Detection ==============")
 if use_TPU:
     interpreter = Interpreter(model_path=MODEL_PATH, experimental_delegates=[load_delegate('libedgetpu.so.1.0')])
 else:
@@ -131,6 +145,8 @@ class MainWindow(QMainWindow):
         self.file_ready = ""
         self.btn_resource_storage.clicked.connect(self.resource_storage)
         self.btn_predict.clicked.connect(self.klasifikasi_aksara)
+        self.ckb_show_rank.stateChanged.connect(self.show_rank)
+        self.clear_rank_result()
         
         # ===================================================================================
         # Bagian TAB 3 | Object Detection
@@ -165,6 +181,14 @@ class MainWindow(QMainWindow):
         self.slider_green.setValue(255)
         self.slider_blue.setValue(255)
         
+        self.model_densenet = None
+        self.model_efficientnet = None
+        self.model_inception = None
+        self.model_mobilenet = None
+        self.model_restnet = None
+        self.model_vgg = None
+        self.model_xception = None
+        
         self.slider_red.valueChanged.connect(self.set_red)
         self.slider_green.valueChanged.connect(self.set_green)
         self.slider_blue.valueChanged.connect(self.set_blue)
@@ -193,48 +217,96 @@ class MainWindow(QMainWindow):
     def klasifikasi_aksara(self):
         arr_pred = []
         if self.ckb_densenet.isChecked():
-            self.textEdit_klasifikasi.append(f"{QDateTime.currentDateTime().toString('d MMMM yy hh:mm:ss')}: Proses predict from model DenseNet121")
-            model = self.load_my_model("./models/modelA/model_densenet121_20eph.h5")
             self.textEdit_klasifikasi.append(f"{QDateTime.currentDateTime().toString('d MMMM yy hh:mm:ss')}: Proses predict from model DenseNet121 | Load model success")
+            model = model_densenet
             predict_class, skor = self.klasifikasi(model)
-            arr_pred.append([predict_class, skor])
+            self.model_densenet = model
+            arr_pred.append([predict_class, skor,"DenseNet121"])
             
         if self.ckb_efficientnet.isChecked():
-            self.textEdit_klasifikasi.append(f"{QDateTime.currentDateTime().toString('d MMMM yy hh:mm:ss')}: Proses predict from model Efficientnet")
-            model = self.load_my_model("./models/modelA/model_efficientnet_20eph.h5")
             self.textEdit_klasifikasi.append(f"{QDateTime.currentDateTime().toString('d MMMM yy hh:mm:ss')}: Proses predict from model Efficientnet | Load model success")
+            model = model_efficientnet
             predict_class, skor = self.klasifikasi(model)
-            arr_pred.append([predict_class, skor])
+            self.model_efficientnet = model
+            arr_pred.append([predict_class, skor,"EfficientNet"])
             
         if self.ckb_inception.isChecked():
-            self.textEdit_klasifikasi.append(f"{QDateTime.currentDateTime().toString('d MMMM yy hh:mm:ss')}: Proses predict from model Inception")
-            model = self.load_my_model("./models/modelA/model_inception_20eph.h5")
             self.textEdit_klasifikasi.append(f"{QDateTime.currentDateTime().toString('d MMMM yy hh:mm:ss')}: Proses predict from model Inception | Load model success")
+            model = model_inception
             predict_class, skor = self.klasifikasi(model)
-            arr_pred.append([predict_class, skor])
+            self.model_inception = model
+            arr_pred.append([predict_class, skor,"Inception"])
             
         if self.ckb_mobilenet.isChecked():
-            self.klasifikasi()
-        if self.ckb_restnet.isChecked():
-            self.klasifikasi()
-        if self.ckb_vgg.isChecked():
-            self.klasifikasi()
-        if self.ckb_xception.isChecked():
-            self.klasifikasi()
-        
-        if len(arr_pred) > 0:
-            max_value = max(arr_pred, key=lambda x: float(x[1]))
-            label_terbesar = max_value[0]
-            nilai_terbesar = max_value[1]
-        else:
-            label_terbesar = arr_pred[0]
-            nilai_terbesar = arr_pred[1]
-        print(arr_pred)
-        print(label_terbesar,nilai_terbesar)
+            self.textEdit_klasifikasi.append(f"{QDateTime.currentDateTime().toString('d MMMM yy hh:mm:ss')}: Proses predict from model MobileNetV2 | Load model success")
+            model = model_mobilenet
+            predict_class, skor = self.klasifikasi(model)
+            self.model_mobilenet = model
+            arr_pred.append([predict_class, skor,"MobileNetV2"])
             
-    def load_my_model(self, model_path):
-        model = load_model(model_path)
-        return model
+        if self.ckb_restnet.isChecked():
+            self.textEdit_klasifikasi.append(f"{QDateTime.currentDateTime().toString('d MMMM yy hh:mm:ss')}: Proses predict from model RestNet50 | Load model success")
+            model = model_resnet
+            predict_class, skor = self.klasifikasi(model)
+            self.model_restnet = model
+            arr_pred.append([predict_class, skor,"RestNet50"])
+
+        if self.ckb_vgg.isChecked():
+            self.textEdit_klasifikasi.append(f"{QDateTime.currentDateTime().toString('d MMMM yy hh:mm:ss')}: Proses predict from model VGG16 | Load model success")
+            model = model_vgg
+            predict_class, skor = self.klasifikasi(model)
+            self.model_vgg = model
+            arr_pred.append([predict_class, skor,"VGG16"])
+
+        if self.ckb_xception.isChecked():
+            self.textEdit_klasifikasi.append(f"{QDateTime.currentDateTime().toString('d MMMM yy hh:mm:ss')}: Proses predict from model Xception | Load model success")
+            model = model_xception
+            predict_class, skor = self.klasifikasi(model)
+            self.model_xception = model
+            arr_pred.append([predict_class, skor,"Xception"])
+
+        
+        if len(arr_pred) > 1:
+            max_value = max(arr_pred, key=lambda x: float(x[1]))
+            top_label = max_value[0]
+            top_nilai = max_value[1]
+            top_model = max_value[2]
+            print(top_label,top_nilai,top_model)
+            self.top_predict.setText(f"Model Name : {top_model} \n Label : {top_label} \n Confidence : {top_nilai}")
+            
+            arr_pred_sorted = sorted(arr_pred, key=lambda x: float(x[1]), reverse=True)
+            
+            if self.ckb_show_rank.isChecked():
+                rank_title = [self.rank_1, self.rank_2, self.rank_3, self.rank_4, self.rank_5, self.rank_6, self.rank_7]
+                rank_result = [self.result_rank_1, self.result_rank_2, self.result_rank_3, self.result_rank_4, self.result_rank_5, self.result_rank_6, self.result_rank_7]
+                for i, (title, label) in enumerate(zip(rank_title, rank_result)):
+                    
+                    if i < len(arr_pred_sorted):
+                        title.setText(f"Rank {i+1}")
+                        label.setText(f"{arr_pred_sorted[i][2]} \n {arr_pred_sorted[i][0]} \n {arr_pred_sorted[i][1]}")
+                    else:
+                        title.setVisible(False)
+                        label.setVisible(False)
+                        
+        elif len(arr_pred) == 1:
+            label_terbesar = arr_pred[0][0]
+            nilai_terbesar = arr_pred[0][1]
+            model_name = arr_pred[0][2]
+            self.top_predict.setText(f"Model Name : {model_name} \n Label : {label_terbesar} \n Confidence : {nilai_terbesar}")
+            
+        arr_pred.clear()
+        
+    def clear_rank_result(self):
+        self.top_predict.setText("")
+        rank_result = [self.result_rank_1, self.result_rank_2, self.result_rank_3, self.result_rank_4, self.result_rank_5, self.result_rank_6, self.result_rank_7]
+        for label in rank_result:
+            label.setText("")
+        
+    def show_rank(self):
+        pass
+        # if self.ckb_show_rank.isChecked():
+            # self.result_rank_1.setText(f"{max_value[i][2]} \n {max_value[i][0]} \n {max_value[i][1]}")
+            
     
     def klasifikasi(self,model):
         size = (224, 224)

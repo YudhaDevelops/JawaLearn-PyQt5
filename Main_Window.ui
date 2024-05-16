@@ -309,6 +309,9 @@
        <property name="text">
         <string>Active</string>
        </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
       </widget>
      </widget>
      <widget class="QGroupBox" name="groupBox_8">
@@ -413,7 +416,7 @@
          </widget>
         </item>
         <item row="0" column="3">
-         <widget class="QLabel" name="label_48">
+         <widget class="QLabel" name="rank_4">
           <property name="frameShape">
            <enum>QFrame::Box</enum>
           </property>
@@ -426,7 +429,7 @@
          </widget>
         </item>
         <item row="0" column="1">
-         <widget class="QLabel" name="label_44">
+         <widget class="QLabel" name="rank_2">
           <property name="frameShape">
            <enum>QFrame::Box</enum>
           </property>
@@ -439,7 +442,7 @@
          </widget>
         </item>
         <item row="0" column="5">
-         <widget class="QLabel" name="label_43">
+         <widget class="QLabel" name="rank_6">
           <property name="frameShape">
            <enum>QFrame::Box</enum>
           </property>
@@ -452,7 +455,7 @@
          </widget>
         </item>
         <item row="0" column="2">
-         <widget class="QLabel" name="label_47">
+         <widget class="QLabel" name="rank_3">
           <property name="frameShape">
            <enum>QFrame::Box</enum>
           </property>
@@ -491,7 +494,7 @@
          </widget>
         </item>
         <item row="0" column="0">
-         <widget class="QLabel" name="label_46">
+         <widget class="QLabel" name="rank_1">
           <property name="frameShape">
            <enum>QFrame::Box</enum>
           </property>
@@ -530,7 +533,7 @@
          </widget>
         </item>
         <item row="0" column="4">
-         <widget class="QLabel" name="label_45">
+         <widget class="QLabel" name="rank_5">
           <property name="minimumSize">
            <size>
             <width>0</width>
@@ -549,7 +552,7 @@
          </widget>
         </item>
         <item row="0" column="6">
-         <widget class="QLabel" name="label_53">
+         <widget class="QLabel" name="rank_7">
           <property name="frameShape">
            <enum>QFrame::Box</enum>
           </property>
@@ -612,7 +615,7 @@
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QLabel" name="label_35">
+       <widget class="QLabel" name="top_predict">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -633,7 +636,7 @@
          <enum>QFrame::Box</enum>
         </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string>result</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
