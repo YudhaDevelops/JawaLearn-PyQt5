@@ -58,7 +58,7 @@ model_efficientnet = load_model("./models/modelA/model_efficientnet_20eph.h5")
 model_inception = load_model("./models/modelA/model_inception_20eph.h5")
 model_mobilenet = load_model("./models/modelA/model_mobilenetv2_20eph.h5")
 model_resnet = load_model("./models/modelA/model_resnet50_20eph.h5")
-model_vgg = load_model("./models/modelA/model_vgg_20eph.h5")
+model_vgg = load_model("./models/modelA/model_vgg16_20eph.h5")
 model_xception = load_model("./models/modelA/model_xception_20eph.h5")
 
 
@@ -145,8 +145,18 @@ class MainWindow(QMainWindow):
         self.file_ready = ""
         self.btn_resource_storage.clicked.connect(self.resource_storage)
         self.btn_predict.clicked.connect(self.klasifikasi_aksara)
+        self.btn_predict.setEnabled(False)  # Initially disable the predict button
         self.ckb_show_rank.stateChanged.connect(self.show_rank)
         self.clear_rank_result()
+        
+        # Connect checkbox state changes to enable/disable predict button
+        self.ckb_densenet.stateChanged.connect(self.update_predict_button_state)
+        self.ckb_efficientnet.stateChanged.connect(self.update_predict_button_state)
+        self.ckb_inception.stateChanged.connect(self.update_predict_button_state)
+        self.ckb_mobilenet.stateChanged.connect(self.update_predict_button_state)
+        self.ckb_restnet.stateChanged.connect(self.update_predict_button_state)
+        self.ckb_vgg.stateChanged.connect(self.update_predict_button_state)
+        self.ckb_xception.stateChanged.connect(self.update_predict_button_state)
         
         # ===================================================================================
         # Bagian TAB 3 | Object Detection
@@ -196,6 +206,18 @@ class MainWindow(QMainWindow):
     # ====================================================================================
     # Bagian TAB 2 | Klasification
     # ====================================================================================
+    def update_predict_button_state(self):
+        # Enable the predict button if any model checkbox is checked
+        self.btn_predict.setEnabled(
+            self.ckb_densenet.isChecked() or
+            self.ckb_efficientnet.isChecked() or
+            self.ckb_inception.isChecked() or
+            self.ckb_mobilenet.isChecked() or
+            self.ckb_restnet.isChecked() or
+            self.ckb_vgg.isChecked() or
+            self.ckb_xception.isChecked()
+        )
+    
     def resource_storage(self):
         fname = QFileDialog.getOpenFileName(self, 'Open File','E:', 'Image Files (*.png *.jpg *.jpeg)')
         self.textEdit_klasifikasi.append(f"{QDateTime.currentDateTime().toString('d MMMM yy hh:mm:ss')}: File loaded: {fname[0]}")
@@ -486,6 +508,7 @@ class MainWindow(QMainWindow):
         self.DateTime = QDateTime.currentDateTime()
         self.lcd_clock.display(self.DateTime.toString('hh:mm:ss'))
         self.lcd_clock_2.display(self.DateTime.toString('hh:mm:ss'))
+        self.lcd_clock_3.display(self.DateTime.toString('hh:mm:ss'))
 
     def closeEvent(self, event):
         reply = QMessageBox.question(self, 'Window Close', 'Apakah Anda yakin ingin menutup aplikasi?',
