@@ -1,6 +1,6 @@
 from PyQt5 import uic
 from PyQt5.QtMultimedia import QCameraInfo
-from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QFileDialog
+from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QFileDialog, QDesktopWidget
 from PyQt5.QtCore import QThread, pyqtSignal, QTimer, pyqtSlot, QDateTime, Qt
 from PyQt5.QtGui import QImage, QPixmap, QPainter, QPen
 import cv2
@@ -204,6 +204,14 @@ class MainWindow(QMainWindow):
         self.slider_blue.valueChanged.connect(self.set_blue)
     
     # ====================================================================================
+    # Bagian Setting All
+    # ====================================================================================
+    def center(self):
+        frameGm = self.frameGeometry()
+        centerPoint = QDesktopWidget().availableGeometry().center()
+        frameGm.moveCenter(centerPoint)
+        self.move(frameGm.topLeft())
+    # ====================================================================================
     # Bagian TAB 2 | Klasification
     # ====================================================================================
     def update_predict_button_state(self):
@@ -304,6 +312,8 @@ class MainWindow(QMainWindow):
                 for i, (title, label) in enumerate(zip(rank_title, rank_result)):
                     
                     if i < len(arr_pred_sorted):
+                        title.setVisible(True)
+                        label.setVisible(True)
                         title.setText(f"Rank {i+1}")
                         label.setText(f"{arr_pred_sorted[i][2]} \n {arr_pred_sorted[i][0]} \n {arr_pred_sorted[i][1]}")
                     else:
@@ -523,10 +533,14 @@ class MainWindow(QMainWindow):
             event.ignore()
         
 
+
+        
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = MainWindow()
+    window.center()
     window.show()
     sys.exit(app.exec_())
     
 # conda activate conda39 && E: && cd E:\LEGENA\_build_app\JawaLearn-PyQt5 && python main.py
+
