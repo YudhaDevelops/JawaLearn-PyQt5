@@ -8,7 +8,7 @@
 
 > [!NOTE]
 > Atau Anda bisa membuat model sendiri dengan database Anda sendiri, menggunakan program yang saya gunakan di kaggle,
-> Lihat [Untuk Klasifikasi Gambar Model](https://www.kaggle.com/happyngoding/cnn-aksara-use-7-models-fix), dan lihat [Untuk Model AR / objek deteksi Aksara Jawa](https:/ /www.kaggle.com/happyngoding/ssd-mobilenet-v2-python-3-10-12)
+> Lihat [Untuk Klasifikasi Gambar Model](https://www.kaggle.com/happyngoding/cnn-aksara-use-7-models-fix), dan lihat [Untuk Model AR / objek deteksi Aksara Jawa](https://www.kaggle.com/happyngoding/ssd-mobilenet-v2-python-3-10-12)
 
 <br/>
 
