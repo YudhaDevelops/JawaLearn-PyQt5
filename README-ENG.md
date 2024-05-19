@@ -1,19 +1,19 @@
 # APPLICATION OF AUGMENTED REALITY TECHNOLOGY USING CNN (CONVOLUTIONAL NEURAL NETWORK) IN LEARNING JAVANESE CHARACTERS
 
-The JawaLearn application is an application built using machine learning, namely CNN (Convolutional Neural Network), and using image data as a learning tool for the machine. By training different machines it is hoped that it will help you understand the form of Javanese script.
+<br/>
 
-# Purpose of Building the Application
-1. Makes it easy for you to learn Javanese script
-2. Creating an Augmented Reality application by combining AI technology which can make teaching and learning Javanese script easier.
-3. Proving that Augmented Reality technology can be combined together using the Convolutional Neural Network (CNN) algorithm.
-4. Contribute to overcoming students' difficulties in learning Javanese script using Augmented Reality technology
+- [ ] **FIRST STAGE | PREPARING THE MODEL**
+> [!IMPORTANT]
+> First, you have to prepare the model to run this application, or you can directly use my existing model, [Download here](https://github.com/YudhaDevelops/JawaLearn-PyQt5/releases/tag/Models-JawaLearn)
 
-# JawaLearn Application Features
-1. Classification of Javanese Script
-   > This feature can be used to transliterate Javanese LEGENA characters with detection based on images of written characters entered either on the camera daci or the storage on your device.
-   
-3. AR Detection of Javanese Script
-   > This feature can be used to transliterate Javanese LEGENA characters with real-time detection using the available camera. This feature gives meaning to the characters placed in front of the camera.
+> [!NOTE]
+> Or you can create your own model with your own database, using the program I use at kaggle,
+> See [For Model Image Classification](https://www.kaggle.com/happyngoding/cnn-aksara-use-7-models-fix), and see [For Model AR / Javanese script detection object](https://www.kaggle.com/happyngoding/ssd-mobilenet-v2-python-3-10-12)
+
+<br/>
+
+- [x] **FIRST STAGE | PREPARING THE MODEL**
+- [ ] **SECOND STAGE | PREPARING LIBRARY AND PYTHON**
 
 # Requirements Package For Run This Program
 > [!NOTE]
@@ -55,14 +55,48 @@ pip install tensorflow_intel==2.12.0
 ```
 pip install tflite_runtime==2.14.0
 ```
+<br/>
 
+- [x] **FIRST STAGE | PREPARING THE MODEL**
+- [x] **SECOND STAGE | PREPARING LIBRARY AND PYTHON**
+- [ ] **THIRD STAGE | CLONE PROGRAM FROM MY GITHUB**
+      
+# Clone Program
+> git clone https://github.com/YudhaDevelops/JawaLearn-PyQt5
+
+<br/>
+
+- [x] **FIRST STAGE | PREPARING THE MODEL**
+- [x] **SECOND STAGE | PREPARING LIBRARY AND PYTHON**
+- [x] **THIRD STAGE | CLONE PROGRAM FROM MY GITHUB**
+- [ ] **STAGE FOUR | Change the model location**
+
+# Change the location of the model you have created or download from my model release
+
+<br/>
+
+- [x] **FIRST STAGE | PREPARING THE MODEL**
+- [x] **SECOND STAGE | PREPARING LIBRARY AND PYTHON**
+- [x] **THIRD STAGE | CLONE PROGRAM FROM MY GITHUB**
+- [x] **STAGE FOUR | Change the model location**
+- [ ] **FIFTH STAGE | RUN THE PROGRAM**
+
+# Run Program
+```
+python main.py
+```
+
+<br/>
+
+- [x] **FIRST STAGE | PREPARING THE MODEL**
+- [x] **SECOND STAGE | PREPARING LIBRARY AND PYTHON**
+- [x] **THIRD STAGE | CLONE PROGRAM FROM MY GITHUB**
+- [x] **STAGE FOUR | Change the model location**
+- [x] **FIFTH STAGE | RUN THE PROGRAM**
+      
 # If the program runs well, it will look like the image below
 > [!IMPORTANT]
-> You must create a model first with the model extensions being .tflite for AR features and .h5 for Javanese script classification features. or you can directly use my existing model, [Download here](https://github.com/YudhaDevelops/JawaLearn-PyQt5/releases/tag/Models-JawaLearn)
-
-> [!NOTE]
-> Or you can create your own model with your own database, using the program I use at kaggle,
-> See [For Model Image Classification](https://www.kaggle.com/happyngoding/cnn-aksara-use-7-models-fix), and see [For Model AR / Javanese script detection object](https://www.kaggle.com/happyngoding/ssd-mobilenet-v2-python-3-10-12)
+> You must create a model first with the model extensions being .tflite for AR features and .h5 for Javanese script classification features.
 
 ## 1. Running the Javanese Script Classification feature
 ![klasifikasi](https://github.com/YudhaDevelops/JawaLearn-PyQt5/assets/106727245/1c3d93c5-3727-441f-9d68-58131150f729)
