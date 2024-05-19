@@ -1,23 +1,23 @@
 # APPLICATION OF AUGMENTED REALITY TECHNOLOGY USING CNN (CONVOLUTIONAL NEURAL NETWORK) IN LEARNING JAVANESE CHARACTERS
 
-The JawaLearn application is an application built using machine learning, namely CNN (Convolutional Neural Network), and using image data as a learning tool for the machine. By training different machines it is hoped that it will help you understand the form of Javanese script.
+<br/>
 
-# Purpose of Building the Application
-1. Makes it easy for you to learn Javanese script
-2. Creating an Augmented Reality application by combining AI technology which can make teaching and learning Javanese script easier.
-3. Proving that Augmented Reality technology can be combined together using the Convolutional Neural Network (CNN) algorithm.
-4. Contribute to overcoming students' difficulties in learning Javanese script using Augmented Reality technology
+- [ ] **TAHAP PERTAMA | MEMPERSIAPKAN MODEL**
+> [!IMPORTANT]
+> Pertama anda harus menyiapkan model terlebih dahulu untuk menjalankan aplikasi ini, atau bisa langsung menggunakan model saya yang sudah ada, [Unduh di sini](https://github.com/YudhaDevelops/JawaLearn-PyQt5/releases/tag/Models-JawaLearn)
 
-# JawaLearn Application Features
-1. Classification of Javanese Script
-   > This feature can be used to transliterate Javanese LEGENA characters with detection based on images of written characters entered either on the camera daci or the storage on your device.
-   
-3. AR Detection of Javanese Script
-   > This feature can be used to transliterate Javanese LEGENA characters with real-time detection using the available camera. This feature gives meaning to the characters placed in front of the camera.
-
-# Requirements Package For Run This Program
 > [!NOTE]
-> I am using python version ```3.9.19```. By using the python environment in miniconda3.
+> Atau Anda bisa membuat model sendiri dengan database Anda sendiri, menggunakan program yang saya gunakan di kaggle,
+> Lihat [Untuk Klasifikasi Gambar Model](https://www.kaggle.com/happyngoding/cnn-aksara-use-7-models-fix), dan lihat [Untuk Model AR / objek deteksi Aksara Jawa](https:/ /www.kaggle.com/happyngoding/ssd-mobilenet-v2-python-3-10-12)
+
+<br/>
+
+- [x] **TAHAP PERTAMA | MEMPERSIAPKAN MODEL**
+- [ ] **TAHAP KEDUA | MEMPERSIAPKAN LIBRARY DAN PYTHON**
+      
+# Library Yang Harus Di Install
+> [!NOTE]
+> Saya menggunakan python versi ```3.9.19```. Dengan menggunakan lingkungan / env di miniconda3.
 
 ```
 pip install keras==2.12.0
@@ -56,22 +56,57 @@ pip install tensorflow_intel==2.12.0
 pip install tflite_runtime==2.14.0
 ```
 
-# If the program runs well, it will look like the image below
+<br/>
+
+- [x] **TAHAP PERTAMA | MEMPERSIAPKAN MODEL**
+- [x] **TAHAP KEDUA | MEMPERSIAPKAN LIBRARY DAN PYTHON**
+- [ ] **TAHAP KETIGA | CLONE PROGRAM FROM MY GITHUB**
+      
+# Clone Program
+> git clone https://github.com/YudhaDevelops/JawaLearn-PyQt5
+
+<br/>
+
+- [x] **TAHAP PERTAMA | MEMPERSIAPKAN MODEL**
+- [x] **TAHAP KEDUA | MEMPERSIAPKAN LIBRARY DAN PYTHON**
+- [x] **TAHAP KETIGA | CLONE PROGRAM FROM MY GITHUB**
+- [ ] **TAHAP KE EMPAT | Ubah lokasi model **
+
+# Ubah lokasi model yang sudah anda buat Atau download dari model rilis saya
+
+<br/>
+
+- [x] **TAHAP PERTAMA | MEMPERSIAPKAN MODEL**
+- [x] **TAHAP KEDUA | MEMPERSIAPKAN LIBRARY DAN PYTHON**
+- [x] **TAHAP KETIGA | CLONE PROGRAM FROM MY GITHUB**
+- [x] **TAHAP KE EMPAT | UBAH LOKASI MODEL**
+- [ ] **TAHAP KE LIMA | JALANKAN PROGRAM**
+
+# Jalankan Program
+```
+python main.py
+```
+
+<br/>
+
+- [x] **TAHAP PERTAMA | MEMPERSIAPKAN MODEL**
+- [x] **TAHAP KEDUA | MEMPERSIAPKAN LIBRARY DAN PYTHON**
+- [x] **TAHAP KETIGA | CLONE PROGRAM FROM MY GITHUB**
+- [x] **TAHAP KE EMPAT | UBAH LOKASI MODEL**
+- [x] **TAHAP KE LIMA | JALANKAN PROGRAM**
+      
+# Jika program berjalan dengan baik maka akan terlihat seperti gambar di bawah ini
 > [!IMPORTANT]
-> You must create a model first with the model extensions being .tflite for AR features and .h5 for Javanese script classification features. or you can directly use my existing model, [Download here](https://github.com/YudhaDevelops/JawaLearn-PyQt5/releases/tag/Models-JawaLearn)
+> Anda harus membuat model terlebih dahulu dengan ekstensi model .tflite untuk fitur AR dan .h5 untuk fitur klasifikasi aksara jawa.
 
-> [!NOTE]
-> Or you can create your own model with your own database, using the program I use at kaggle,
-> See [For Model Image Classification](https://www.kaggle.com/happyngoding/cnn-aksara-use-7-models-fix), and see [For Model AR / Javanese script detection object](https://www.kaggle.com/happyngoding/ssd-mobilenet-v2-python-3-10-12)
-
-## 1. Running the Javanese Script Classification feature
+## 1. Menjalankan fitur Klasifikasi Aksara Jawa
 ![klasifikasi](https://github.com/YudhaDevelops/JawaLearn-PyQt5/assets/106727245/1c3d93c5-3727-441f-9d68-58131150f729)
 
-## 2. Running the Javanese Script AR Detection feature
+## 2. Menjalankan fitur Deteksi AR Aksara Jawa
 ![objek_deteksi](https://github.com/YudhaDevelops/JawaLearn-PyQt5/assets/106727245/41b04ddc-e0f6-44e9-a9fd-94200fe83ab6)
 
-# This is an AR program that uses a model as a brain or database that is used to transliterate from Javanese script to Latin script. 
-The program will add a box around the Javanese script area and provide the meaning of the character at the top left of the detected Javanese script. Can be seen in the video below
+# Ini adalah program AR yang menggunakan model sebagai otak atau database yang digunakan untuk melakukan transliterasi dari aksara Jawa ke aksara Latin.
+Program akan menambahkan kotak di sekitar area aksara jawa dan memberikan arti karakter di kiri atas aksara jawa yang terdeteksi. Dapat dilihat pada video dibawah ini
 
 https://github.com/YudhaDevelops/JawaLearn-PyQt5/assets/106727245/5e11c069-26fb-4b43-9a07-7d12ab41d471
 
