@@ -1,0 +1,817 @@
+Running auto-py-to-exe v2.43.3
+Building directory: C:\Users\bimab\AppData\Local\Temp\tmpc5rrp79x
+Provided command: pyinstaller --noconfirm --onefile --console --icon "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/logo.ico" --name "JawaLearn" --add-data "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/cursor.svg;." --add-data "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/git.png;." --add-data "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/java.png;." --add-data "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/klasifikasi_241.png;." --add-data "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/label_klasifikasi.txt;." --add-data "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/label_objek_deteksi.txt;." --add-data "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/laravel.png;." --add-data "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/logo.png;." --add-data "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/logo51.png;." --add-data "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/me.png;." --add-data "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/model_densenet121_20eph.h5;." --add-data "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/model_efficientnet_20eph.h5;." --add-data "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/model_inception_20eph.h5;." --add-data "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/model_mobilenetv2_20eph.h5;." --add-data "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/model_objek_deteksi.tflite;." --add-data "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/model_resnet50_20eph.h5;." --add-data "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/model_vgg16_20eph.h5;." --add-data "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/model_xception_20eph.h5;." --add-data "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/mongodb.png;." --add-data "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/nodejs.png;." --add-data "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/objek_deteksi_241.png;." --add-data "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/python.png;." --add-data "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/qt.png;." --add-data "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/sql.png;." --add-data "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/terminal.png;." --add-data "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/usd.png;."  "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/main.py"
+Recursion Limit is set to 5000
+Executing: pyinstaller --noconfirm --onefile --console --icon E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/logo.ico --name JawaLearn --add-data E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/cursor.svg;. --add-data E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/git.png;. --add-data E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/java.png;. --add-data E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/klasifikasi_241.png;. --add-data E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/label_klasifikasi.txt;. --add-data E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/label_objek_deteksi.txt;. --add-data E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/laravel.png;. --add-data E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/logo.png;. --add-data E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/logo51.png;. --add-data E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/me.png;. --add-data E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/model_densenet121_20eph.h5;. --add-data E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/model_efficientnet_20eph.h5;. --add-data E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/model_inception_20eph.h5;. --add-data E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/model_mobilenetv2_20eph.h5;. --add-data E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/model_objek_deteksi.tflite;. --add-data E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/model_resnet50_20eph.h5;. --add-data E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/model_vgg16_20eph.h5;. --add-data E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/model_xception_20eph.h5;. --add-data E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/mongodb.png;. --add-data E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/nodejs.png;. --add-data E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/objek_deteksi_241.png;. --add-data E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/python.png;. --add-data E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/qt.png;. --add-data E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/sql.png;. --add-data E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/terminal.png;. --add-data E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/usd.png;. E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/main.py --distpath C:\Users\bimab\AppData\Local\Temp\tmpc5rrp79x\application --workpath C:\Users\bimab\AppData\Local\Temp\tmpc5rrp79x\build --specpath C:\Users\bimab\AppData\Local\Temp\tmpc5rrp79x
+
+816232 INFO: PyInstaller: 6.6.0, contrib hooks: 2024.6
+816267 INFO: Python: 3.9.19 (conda)
+816282 INFO: Platform: Windows-10-10.0.19045-SP0
+816311 INFO: wrote C:\Users\bimab\AppData\Local\Temp\tmpc5rrp79x\JawaLearn.spec
+816398 INFO: Extending PYTHONPATH with paths
+['E:\\LEGENA\\_build_app\\JawaLearn-PyQt5\\versi 2']
+818005 INFO: Appending 'datas' from .spec
+818024 INFO: checking Analysis
+818040 INFO: Building Analysis because Analysis-02.toc is non existent
+818063 INFO: Running Analysis Analysis-02.toc
+818095 INFO: Target bytecode optimization level: 0
+818107 INFO: Reusing cached module dependency graph...
+818245 INFO: Caching module graph hooks...
+818928 INFO: Looking for Python shared library...
+818975 INFO: Using Python shared library: C:\Users\bimab\miniconda3\envs\conda39\python39.dll
+818982 INFO: Analyzing E:\LEGENA\_build_app\JawaLearn-PyQt5\versi 2\main.py
+819191 INFO: Loading module hook 'hook-PyQt5.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+819225 INFO: Loading module hook 'hook-PyQt5.QtCore.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+819812 INFO: Loading module hook 'hook-PyQt5.QtGui.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+821198 INFO: Loading module hook 'hook-PyQt5.QtMultimedia.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+822031 INFO: Loading module hook 'hook-PyQt5.QtWidgets.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+822671 INFO: Loading module hook 'hook-psutil.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks\\stdhooks'...
+823794 INFO: Loading module hook 'hook-platform.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+823970 INFO: Loading module hook 'hook-cv2.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks\\stdhooks'...
+827727 INFO: Loading module hook 'hook-numpy.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\Lib\\site-packages\\numpy\\_pyinstaller'...
+828013 WARNING: Conda distribution 'numpy', dependency of 'numpy', was not found. If you installed this distribution with pip then you may ignore this warning.
+828247 INFO: Loading module hook 'hook-pickle.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+829814 INFO: Loading module hook 'hook-difflib.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+829857 INFO: Loading module hook 'hook-heapq.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+830522 INFO: Loading module hook 'hook-multiprocessing.util.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+831029 INFO: Loading module hook 'hook-xml.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+833874 INFO: Loading module hook 'hook-sysconfig.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+837871 INFO: Processing pre-safe import module hook tensorflow from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks\\pre_safe_import_module\\hook-tensorflow.py'.
+837980 INFO: Loading module hook 'hook-tensorflow.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks\\stdhooks'...
+837998 INFO: hook-tensorflow: tensorflow dist name: tensorflow
+838022 INFO: hook-tensorflow: tensorflow version: 2.12.0
+917235 WARNING: collect_dynamic_libs - skipping library collection for module 'tensorflow-plugins' as it is not a package.
+917245 INFO: Processing pre-safe import module hook distutils from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module\\hook-distutils.py'.
+917277 INFO: Processing pre-find module path hook distutils from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks\\pre_find_module_path\\hook-distutils.py'.
+918433 INFO: Loading module hook 'hook-distutils.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+918877 INFO: Loading module hook 'hook-xml.dom.domreg.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+920460 INFO: Loading module hook 'hook-encodings.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+923924 INFO: Loading module hook 'hook-pkg_resources.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+934304 INFO: Loading module hook 'hook-packaging.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+939772 INFO: Processing pre-safe import module hook six.moves from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module\\hook-six.moves.py'.
+942948 INFO: Loading module hook 'hook-setuptools.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+951004 INFO: Loading module hook 'hook-distutils.util.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+951496 INFO: Loading module hook 'hook-setuptools.msvc.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+951590 INFO: Loading module hook 'hook-importlib_metadata.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+954271 INFO: Loading module hook 'hook-IPython.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks\\stdhooks'...
+960796 INFO: Loading module hook 'hook-matplotlib.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+962547 INFO: Processing pre-safe import module hook gi from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module\\hook-gi.py'.
+962795 INFO: Loading module hook 'hook-PIL.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+963012 INFO: Loading module hook 'hook-PIL.Image.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+965546 INFO: Loading module hook 'hook-xml.etree.cElementTree.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+966118 INFO: Loading module hook 'hook-pycparser.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks\\stdhooks'...
+968944 INFO: Loading module hook 'hook-PIL.ImageFilter.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+970572 INFO: Loading module hook 'hook-jinja2.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks\\stdhooks'...
+978244 INFO: Loading module hook 'hook-matplotlib.backends.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+979934 INFO: Loading module hook 'hook-importlib_resources.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+980127 INFO: Loading module hook 'hook-certifi.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks\\stdhooks'...
+980279 INFO: Loading module hook 'hook-pygments.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+990970 INFO: Loading module hook 'hook-wcwidth.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+993669 INFO: Loading module hook 'hook-jedi.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks\\stdhooks'...
+997531 INFO: Loading module hook 'hook-parso.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks\\stdhooks'...
+1000705 INFO: Loading module hook 'hook-sqlite3.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+1004129 INFO: Loading module hook 'hook-nbformat.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks\\stdhooks'...
+1004766 INFO: Loading module hook 'hook-jsonschema.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks\\stdhooks'...
+1006723 INFO: Loading module hook 'hook-jsonschema_specifications.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks\\stdhooks'...
+1007687 INFO: Loading module hook 'hook-charset_normalizer.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks\\stdhooks'...
+1008497 INFO: Loading module hook 'hook-cryptography.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks\\stdhooks'...
+1017725 INFO: Loading module hook 'hook-zmq.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks\\stdhooks'...
+1021826 INFO: Loading module hook 'hook-platformdirs.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks\\stdhooks'...
+1023456 INFO: Loading module hook 'hook-_tkinter.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+1023561 INFO: Loading module hook 'hook-PySide2.py' from 'C:\\Users\\bimab\\miniconda3\\envs\\conda39\\lib\\site-packages\\PyInstaller\\hooks'...
+An error occurred while packaging
+Traceback (most recent call last):
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\auto_py_to_exe-2.43.3-py3.9.egg\auto_py_to_exe\packaging.py", line 135, in package
+    run_pyinstaller()
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\__main__.py", line 212, in run
+    run_build(pyi_config, spec_file, **vars(args))
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\__main__.py", line 69, in run_build
+    PyInstaller.building.build_main.main(pyi_config, spec_file, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\building\build_main.py", line 1186, in main
+    build(specfile, distpath, workpath, clean_build)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\building\build_main.py", line 1126, in build
+    exec(code, spec_namespace)
+  File "C:\Users\bimab\AppData\Local\Temp\tmpc5rrp79x\JawaLearn.spec", line 4, in <module>
+    a = Analysis(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\building\build_main.py", line 527, in __init__
+    self.__postinit__()
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\building\datastruct.py", line 184, in __postinit__
+    self.assemble()
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\building\build_main.py", line 667, in assemble
+    program_scripts.append(self.graph.add_script(script))
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 268, in add_script
+    self._top_script_node = super().add_script(pathname)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1160, in add_script
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2048, in _safe_import_hook
+    target_modules = self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1232, in import_hook
+    target_package, target_module_partname = self._find_head_package(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1411, in _find_head_package
+    target_package = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2048, in _safe_import_hook
+    target_modules = self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1245, in import_hook
+    submodule = self._safe_import_module(head, mname, submodule)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2257, in _safe_import_hook
+    self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1271, in import_hook
+    for target_submodule in self._import_importable_package_submodules(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1520, in _import_importable_package_submodules
+    submodule = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2257, in _safe_import_hook
+    self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1271, in import_hook
+    for target_submodule in self._import_importable_package_submodules(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1520, in _import_importable_package_submodules
+    submodule = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2257, in _safe_import_hook
+    self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1271, in import_hook
+    for target_submodule in self._import_importable_package_submodules(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1520, in _import_importable_package_submodules
+    submodule = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2048, in _safe_import_hook
+    target_modules = self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1245, in import_hook
+    submodule = self._safe_import_module(head, mname, submodule)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2257, in _safe_import_hook
+    self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1271, in import_hook
+    for target_submodule in self._import_importable_package_submodules(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1520, in _import_importable_package_submodules
+    submodule = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2257, in _safe_import_hook
+    self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1271, in import_hook
+    for target_submodule in self._import_importable_package_submodules(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1520, in _import_importable_package_submodules
+    submodule = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2257, in _safe_import_hook
+    self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1271, in import_hook
+    for target_submodule in self._import_importable_package_submodules(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1520, in _import_importable_package_submodules
+    submodule = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2257, in _safe_import_hook
+    self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1271, in import_hook
+    for target_submodule in self._import_importable_package_submodules(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1520, in _import_importable_package_submodules
+    submodule = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2257, in _safe_import_hook
+    self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1271, in import_hook
+    for target_submodule in self._import_importable_package_submodules(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1520, in _import_importable_package_submodules
+    submodule = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2257, in _safe_import_hook
+    self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1271, in import_hook
+    for target_submodule in self._import_importable_package_submodules(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1520, in _import_importable_package_submodules
+    submodule = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2257, in _safe_import_hook
+    self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1271, in import_hook
+    for target_submodule in self._import_importable_package_submodules(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1520, in _import_importable_package_submodules
+    submodule = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2257, in _safe_import_hook
+    self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1271, in import_hook
+    for target_submodule in self._import_importable_package_submodules(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1520, in _import_importable_package_submodules
+    submodule = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2257, in _safe_import_hook
+    self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1271, in import_hook
+    for target_submodule in self._import_importable_package_submodules(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1520, in _import_importable_package_submodules
+    submodule = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2257, in _safe_import_hook
+    self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1271, in import_hook
+    for target_submodule in self._import_importable_package_submodules(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1520, in _import_importable_package_submodules
+    submodule = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2257, in _safe_import_hook
+    self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1271, in import_hook
+    for target_submodule in self._import_importable_package_submodules(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1520, in _import_importable_package_submodules
+    submodule = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2048, in _safe_import_hook
+    target_modules = self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1245, in import_hook
+    submodule = self._safe_import_module(head, mname, submodule)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2257, in _safe_import_hook
+    self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1271, in import_hook
+    for target_submodule in self._import_importable_package_submodules(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1520, in _import_importable_package_submodules
+    submodule = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2257, in _safe_import_hook
+    self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1271, in import_hook
+    for target_submodule in self._import_importable_package_submodules(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1520, in _import_importable_package_submodules
+    submodule = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2257, in _safe_import_hook
+    self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1271, in import_hook
+    for target_submodule in self._import_importable_package_submodules(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1520, in _import_importable_package_submodules
+    submodule = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2257, in _safe_import_hook
+    self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1271, in import_hook
+    for target_submodule in self._import_importable_package_submodules(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1520, in _import_importable_package_submodules
+    submodule = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2048, in _safe_import_hook
+    target_modules = self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1245, in import_hook
+    submodule = self._safe_import_module(head, mname, submodule)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2257, in _safe_import_hook
+    self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1271, in import_hook
+    for target_submodule in self._import_importable_package_submodules(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1520, in _import_importable_package_submodules
+    submodule = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2257, in _safe_import_hook
+    self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1271, in import_hook
+    for target_submodule in self._import_importable_package_submodules(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1520, in _import_importable_package_submodules
+    submodule = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2048, in _safe_import_hook
+    target_modules = self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1245, in import_hook
+    submodule = self._safe_import_module(head, mname, submodule)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2048, in _safe_import_hook
+    target_modules = self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1245, in import_hook
+    submodule = self._safe_import_module(head, mname, submodule)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2257, in _safe_import_hook
+    self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1271, in import_hook
+    for target_submodule in self._import_importable_package_submodules(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1520, in _import_importable_package_submodules
+    submodule = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2257, in _safe_import_hook
+    self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1271, in import_hook
+    for target_submodule in self._import_importable_package_submodules(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1520, in _import_importable_package_submodules
+    submodule = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2048, in _safe_import_hook
+    target_modules = self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1245, in import_hook
+    submodule = self._safe_import_module(head, mname, submodule)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2048, in _safe_import_hook
+    target_modules = self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1245, in import_hook
+    submodule = self._safe_import_module(head, mname, submodule)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2048, in _safe_import_hook
+    target_modules = self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1245, in import_hook
+    submodule = self._safe_import_module(head, mname, submodule)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2257, in _safe_import_hook
+    self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1271, in import_hook
+    for target_submodule in self._import_importable_package_submodules(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1520, in _import_importable_package_submodules
+    submodule = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2257, in _safe_import_hook
+    self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1271, in import_hook
+    for target_submodule in self._import_importable_package_submodules(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1520, in _import_importable_package_submodules
+    submodule = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2048, in _safe_import_hook
+    target_modules = self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1232, in import_hook
+    target_package, target_module_partname = self._find_head_package(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1411, in _find_head_package
+    target_package = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2048, in _safe_import_hook
+    target_modules = self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1232, in import_hook
+    target_package, target_module_partname = self._find_head_package(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1411, in _find_head_package
+    target_package = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2257, in _safe_import_hook
+    self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1271, in import_hook
+    for target_submodule in self._import_importable_package_submodules(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1520, in _import_importable_package_submodules
+    submodule = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2048, in _safe_import_hook
+    target_modules = self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1232, in import_hook
+    target_package, target_module_partname = self._find_head_package(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1411, in _find_head_package
+    target_package = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2257, in _safe_import_hook
+    self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1271, in import_hook
+    for target_submodule in self._import_importable_package_submodules(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1520, in _import_importable_package_submodules
+    submodule = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2048, in _safe_import_hook
+    target_modules = self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1232, in import_hook
+    target_package, target_module_partname = self._find_head_package(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1411, in _find_head_package
+    target_package = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2048, in _safe_import_hook
+    target_modules = self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1245, in import_hook
+    submodule = self._safe_import_module(head, mname, submodule)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2048, in _safe_import_hook
+    target_modules = self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1245, in import_hook
+    submodule = self._safe_import_module(head, mname, submodule)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2257, in _safe_import_hook
+    self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1271, in import_hook
+    for target_submodule in self._import_importable_package_submodules(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1520, in _import_importable_package_submodules
+    submodule = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2257, in _safe_import_hook
+    self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1271, in import_hook
+    for target_submodule in self._import_importable_package_submodules(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1520, in _import_importable_package_submodules
+    submodule = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2048, in _safe_import_hook
+    target_modules = self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1232, in import_hook
+    target_package, target_module_partname = self._find_head_package(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1411, in _find_head_package
+    target_package = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2048, in _safe_import_hook
+    target_modules = self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1232, in import_hook
+    target_package, target_module_partname = self._find_head_package(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1411, in _find_head_package
+    target_package = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2048, in _safe_import_hook
+    target_modules = self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1232, in import_hook
+    target_package, target_module_partname = self._find_head_package(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1411, in _find_head_package
+    target_package = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2048, in _safe_import_hook
+    target_modules = self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1245, in import_hook
+    submodule = self._safe_import_module(head, mname, submodule)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2048, in _safe_import_hook
+    target_modules = self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1232, in import_hook
+    target_package, target_module_partname = self._find_head_package(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1411, in _find_head_package
+    target_package = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2048, in _safe_import_hook
+    target_modules = self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1232, in import_hook
+    target_package, target_module_partname = self._find_head_package(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1411, in _find_head_package
+    target_package = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 437, in _safe_import_hook
+    ret_modules = super()._safe_import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2048, in _safe_import_hook
+    target_modules = self.import_hook(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1232, in import_hook
+    target_package, target_module_partname = self._find_head_package(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1411, in _find_head_package
+    target_package = self._safe_import_module(
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 501, in _safe_import_module
+    return super()._safe_import_module(module_basename, module_name, parent_package)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 1792, in _safe_import_module
+    self._process_imports(n)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\lib\modulegraph\modulegraph.py", line 2591, in _process_imports
+    target_modules = self._safe_import_hook(*import_info, **kwargs)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 368, in _safe_import_hook
+    excluded_imports = self._find_all_excluded_imports(source_module.identifier)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\analysis.py", line 356, in _find_all_excluded_imports
+    excluded_imports.update(module_hook.excludedimports)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\imphook.py", line 316, in __getattr__
+    self._load_hook_module()
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\depend\imphook.py", line 383, in _load_hook_module
+    self._hook_module = importlib_load_source(self.hook_module_name, self.hook_filename)
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\compat.py", line 591, in importlib_load_source
+    mod_loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\hooks\hook-PySide2.py", line 15, in <module>
+    ensure_single_qt_bindings_package("PySide2")
+  File "C:\Users\bimab\miniconda3\envs\conda39\lib\site-packages\PyInstaller\utils\hooks\qt\__init__.py", line 1331, in ensure_single_qt_bindings_package
+    raise SystemExit(
+SystemExit: Aborting build process due to attempt to collect multiple Qt bindings packages: attempting to run hook for 'PySide2', while hook for 'PyQt5' has already been run! PyInstaller does not support multiple Qt bindings packages in a frozen application - either ensure that the build environment has only one Qt bindings package installed, or exclude the extraneous bindings packages via the module exclusion mechanism (--exclude command-line option, or excludes list in the spec file).
+
+Project output will not be moved to output folder
+Complete.
