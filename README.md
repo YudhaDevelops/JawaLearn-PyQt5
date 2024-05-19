@@ -17,6 +17,6 @@ The JawaLearn application is an application built using machine learning, namely
 
 # You can see the full readme here
 > [!NOTE]
-> [FULL README ENGLISH](https://github.com/YudhaDevelops/JawaLearn-PyQt5/blob/main/README-ENG.md)
+> [FULL README ENGLISH](https://github.com/YudhaDevelops/JawaLearn-PyQt5/blob/main/README-ENG.md) <br/>
 > [FULL README INDONESIAN](https://github.com/YudhaDevelops/JawaLearn-PyQt5/blob/main/README-IND.md)
 
