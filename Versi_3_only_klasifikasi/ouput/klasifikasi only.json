@@ -1,0 +1,165 @@
+{
+ "version": "auto-py-to-exe-configuration_v1",
+ "pyinstallerOptions": [
+  {
+   "optionDest": "noconfirm",
+   "value": true
+  },
+  {
+   "optionDest": "filenames",
+   "value": "E:/LEGENA/_build_app/Dev For JawaLearn-PyQt5/JawaLearn-PyQt5/Versi_3_only_klasifikasi/build/main.py"
+  },
+  {
+   "optionDest": "onefile",
+   "value": true
+  },
+  {
+   "optionDest": "console",
+   "value": true
+  },
+  {
+   "optionDest": "icon_file",
+   "value": "E:/LEGENA/_build_app/Dev For JawaLearn-PyQt5/JawaLearn-PyQt5/Versi_3_only_klasifikasi/build/logo.ico"
+  },
+  {
+   "optionDest": "name",
+   "value": "JawaLearn-Classification"
+  },
+  {
+   "optionDest": "clean_build",
+   "value": false
+  },
+  {
+   "optionDest": "strip",
+   "value": false
+  },
+  {
+   "optionDest": "noupx",
+   "value": false
+  },
+  {
+   "optionDest": "disable_windowed_traceback",
+   "value": false
+  },
+  {
+   "optionDest": "uac_admin",
+   "value": false
+  },
+  {
+   "optionDest": "uac_uiaccess",
+   "value": false
+  },
+  {
+   "optionDest": "argv_emulation",
+   "value": false
+  },
+  {
+   "optionDest": "bootloader_ignore_signals",
+   "value": false
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/Dev For JawaLearn-PyQt5/JawaLearn-PyQt5/Versi_3_only_klasifikasi/build/cursor.svg;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/Dev For JawaLearn-PyQt5/JawaLearn-PyQt5/Versi_3_only_klasifikasi/build/git.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/Dev For JawaLearn-PyQt5/JawaLearn-PyQt5/Versi_3_only_klasifikasi/build/java.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/Dev For JawaLearn-PyQt5/JawaLearn-PyQt5/Versi_3_only_klasifikasi/build/klasifikasi_241.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/Dev For JawaLearn-PyQt5/JawaLearn-PyQt5/Versi_3_only_klasifikasi/build/label_klasifikasi.txt;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/Dev For JawaLearn-PyQt5/JawaLearn-PyQt5/Versi_3_only_klasifikasi/build/laravel.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/Dev For JawaLearn-PyQt5/JawaLearn-PyQt5/Versi_3_only_klasifikasi/build/logo.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/Dev For JawaLearn-PyQt5/JawaLearn-PyQt5/Versi_3_only_klasifikasi/build/logo51.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/Dev For JawaLearn-PyQt5/JawaLearn-PyQt5/Versi_3_only_klasifikasi/build/me.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/Dev For JawaLearn-PyQt5/JawaLearn-PyQt5/Versi_3_only_klasifikasi/build/model_densenet121_20eph.h5;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/Dev For JawaLearn-PyQt5/JawaLearn-PyQt5/Versi_3_only_klasifikasi/build/model_efficientnet_20eph.h5;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/Dev For JawaLearn-PyQt5/JawaLearn-PyQt5/Versi_3_only_klasifikasi/build/model_inception_20eph.h5;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/Dev For JawaLearn-PyQt5/JawaLearn-PyQt5/Versi_3_only_klasifikasi/build/model_mobilenetv2_20eph.h5;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/Dev For JawaLearn-PyQt5/JawaLearn-PyQt5/Versi_3_only_klasifikasi/build/model_resnet50_20eph.h5;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/Dev For JawaLearn-PyQt5/JawaLearn-PyQt5/Versi_3_only_klasifikasi/build/model_vgg16_20eph.h5;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/Dev For JawaLearn-PyQt5/JawaLearn-PyQt5/Versi_3_only_klasifikasi/build/model_xception_20eph.h5;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/Dev For JawaLearn-PyQt5/JawaLearn-PyQt5/Versi_3_only_klasifikasi/build/mongodb.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/Dev For JawaLearn-PyQt5/JawaLearn-PyQt5/Versi_3_only_klasifikasi/build/nodejs.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/Dev For JawaLearn-PyQt5/JawaLearn-PyQt5/Versi_3_only_klasifikasi/build/objek_deteksi_241.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/Dev For JawaLearn-PyQt5/JawaLearn-PyQt5/Versi_3_only_klasifikasi/build/python.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/Dev For JawaLearn-PyQt5/JawaLearn-PyQt5/Versi_3_only_klasifikasi/build/qt.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/Dev For JawaLearn-PyQt5/JawaLearn-PyQt5/Versi_3_only_klasifikasi/build/sql.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/Dev For JawaLearn-PyQt5/JawaLearn-PyQt5/Versi_3_only_klasifikasi/build/terminal.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/Dev For JawaLearn-PyQt5/JawaLearn-PyQt5/Versi_3_only_klasifikasi/build/usd.jpg;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/Dev For JawaLearn-PyQt5/JawaLearn-PyQt5/Versi_3_only_klasifikasi/build/usd.png;."
+  }
+ ],
+ "nonPyinstallerOptions": {
+  "increaseRecursionLimit": true,
+  "manualArguments": ""
+ }
+}

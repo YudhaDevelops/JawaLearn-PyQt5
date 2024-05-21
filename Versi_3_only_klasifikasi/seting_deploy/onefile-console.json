@@ -1,0 +1,169 @@
+{
+ "version": "auto-py-to-exe-configuration_v1",
+ "pyinstallerOptions": [
+  {
+   "optionDest": "noconfirm",
+   "value": true
+  },
+  {
+   "optionDest": "filenames",
+   "value": "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/main.py"
+  },
+  {
+   "optionDest": "onefile",
+   "value": true
+  },
+  {
+   "optionDest": "console",
+   "value": true
+  },
+  {
+   "optionDest": "icon_file",
+   "value": "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/logo.ico"
+  },
+  {
+   "optionDest": "name",
+   "value": "JawaLearn"
+  },
+  {
+   "optionDest": "clean_build",
+   "value": false
+  },
+  {
+   "optionDest": "strip",
+   "value": false
+  },
+  {
+   "optionDest": "noupx",
+   "value": false
+  },
+  {
+   "optionDest": "disable_windowed_traceback",
+   "value": false
+  },
+  {
+   "optionDest": "uac_admin",
+   "value": false
+  },
+  {
+   "optionDest": "uac_uiaccess",
+   "value": false
+  },
+  {
+   "optionDest": "argv_emulation",
+   "value": false
+  },
+  {
+   "optionDest": "bootloader_ignore_signals",
+   "value": false
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/cursor.svg;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/git.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/java.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/klasifikasi_241.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/label_klasifikasi.txt;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/label_objek_deteksi.txt;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/laravel.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/logo.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/logo51.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/me.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/model_densenet121_20eph.h5;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/model_efficientnet_20eph.h5;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/model_inception_20eph.h5;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/model_mobilenetv2_20eph.h5;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/model_objek_deteksi.tflite;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/model_resnet50_20eph.h5;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/model_vgg16_20eph.h5;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/model_xception_20eph.h5;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/mongodb.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/nodejs.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/objek_deteksi_241.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/python.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/qt.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/sql.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/terminal.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/LEGENA/_build_app/JawaLearn-PyQt5/versi 2/usd.png;."
+  }
+ ],
+ "nonPyinstallerOptions": {
+  "increaseRecursionLimit": true,
+  "manualArguments": ""
+ }
+}

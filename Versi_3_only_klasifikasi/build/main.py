@@ -1,25 +1,81 @@
-# -*- coding: utf-8 -*-
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtMultimedia import QCameraInfo
+from PyQt5.QtWidgets import *
+from PyQt5.QtCore import QDateTime, QTimer
+from PyQt5 import QtGui
+import os, cv2
+import tensorflow
+from keras.models import load_model
+import numpy as np
+import sys
+from PIL import Image, ImageOps
+import warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning)
 
-################################################################################
-## Form generated from reading UI file 'Main_Windowktyfce.ui'
-##
-## Created by: Qt User Interface Compiler version 5.15.2
-##
-## WARNING! All changes made in this file will be lost when recompiling UI file!
-################################################################################
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
 
-from PySide2.QtCore import *
-from PySide2.QtGui import *
-from PySide2.QtWidgets import *
+    return os.path.join(base_path, relative_path)
 
 
+# klasifikasi model
+print("============== Load Label Klasifikasi ==============")
+LABEL_KLASIFIKASI = resource_path("label_klasifikasi.txt")
+with open(LABEL_KLASIFIKASI, 'r') as f:
+    labels_klasifikasi = [line.strip() for line in f.readlines()]
+if labels_klasifikasi[0] == '???':
+    del(labels_klasifikasi[0])
+    
+print("============== Load Model Klasifikasi ==============")
+model_densenet = load_model(resource_path("model_densenet121_20eph.h5"))
+print("| Load Model EfficientNet")
+model_efficientnet = load_model(resource_path("model_efficientnet_20eph.h5"))
+print("| Load Model Inception")
+model_inception = load_model(resource_path("model_inception_20eph.h5"))
+print("| Load Model Mobilenet")
+model_mobilenet = load_model(resource_path("model_mobilenetv2_20eph.h5"))
+print("| Load Model Resnet")
+model_resnet = load_model(resource_path("model_resnet50_20eph.h5"))
+print("| Load Model VGG")
+model_vgg = load_model(resource_path("model_vgg16_20eph.h5"))
+print("| Load Model Xception")
+model_xception = load_model(resource_path("model_xception_20eph.h5"))
+
+# END FIXX ========================================================================
+
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.ui = Ui_Object_Detection()
+        self.ui.setupUi(self)
+        self.setWindowFlag(Qt.WindowMaximizeButtonHint, False) 
+        
+    def closeEvent(self, event):
+        reply = QMessageBox.question(self, 'JawaLearn', 'Apakah Anda yakin ingin menutup aplikasi?',
+                                     QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+        if reply == QMessageBox.Yes:
+            event.accept()
+            if hasattr(self.ui, 'videostream'):
+                self.ui.videostream.stop()
+            print('Window closed')
+        else:
+            event.ignore()
+            
+    def center(self):
+        frameGm = self.frameGeometry()
+        centerPoint = QDesktopWidget().availableGeometry().center()
+        frameGm.moveCenter(centerPoint)
+        self.move(frameGm.topLeft())
+        
 class Ui_Object_Detection(object):
     def setupUi(self, Object_Detection):
         if not Object_Detection.objectName():
             Object_Detection.setObjectName(u"Object_Detection")
-        Object_Detection.resize(1193, 696)
-        Object_Detection.setStyleSheet(u"background-color: rgb(237, 250, 239);")
-        Object_Detection.setToolButtonStyle(Qt.ToolButtonTextBesideIcon)
+        
         self.centralwidget = QWidget(Object_Detection)
         self.centralwidget.setObjectName(u"centralwidget")
         self.tabWidget = QTabWidget(self.centralwidget)
@@ -53,10 +109,10 @@ class Ui_Object_Detection(object):
         self.label_36.setWordWrap(True)
         self.groupBox_14 = QGroupBox(self.tab_3)
         self.groupBox_14.setObjectName(u"groupBox_14")
-        self.groupBox_14.setGeometry(QRect(10, 190, 581, 161))
+        self.groupBox_14.setGeometry(QRect(10, 190, 581, 151))
         self.label_15 = QLabel(self.groupBox_14)
         self.label_15.setObjectName(u"label_15")
-        self.label_15.setGeometry(QRect(20, 20, 551, 131))
+        self.label_15.setGeometry(QRect(20, 20, 551, 121))
         self.label_15.setFont(font1)
         self.label_15.setWordWrap(True)
         self.groupBox_15 = QGroupBox(self.tab_3)
@@ -127,7 +183,7 @@ class Ui_Object_Detection(object):
         self.label_40 = QLabel(self.groupBox_16)
         self.label_40.setObjectName(u"label_40")
         self.label_40.setGeometry(QRect(10, 20, 531, 241))
-        self.label_40.setPixmap(QPixmap(u"../klasifikasi_241.png"))
+        self.label_40.setPixmap(QPixmap(resource_path(u"klasifikasi_241.png")))
         self.label_40.setAlignment(Qt.AlignCenter)
         self.groupBox_17 = QGroupBox(self.frame_3)
         self.groupBox_17.setObjectName(u"groupBox_17")
@@ -135,18 +191,29 @@ class Ui_Object_Detection(object):
         self.label_41 = QLabel(self.groupBox_17)
         self.label_41.setObjectName(u"label_41")
         self.label_41.setGeometry(QRect(10, 20, 531, 241))
-        self.label_41.setPixmap(QPixmap(u"../objek_deteksi_241.png"))
+        self.label_41.setPixmap(QPixmap(resource_path(u"objek_deteksi_241.png")))
         self.label_41.setAlignment(Qt.AlignCenter)
         self.label_42 = QLabel(self.tab_3)
         self.label_42.setObjectName(u"label_42")
         self.label_42.setGeometry(QRect(400, 0, 51, 51))
-        self.label_42.setPixmap(QPixmap(u"../usd.png"))
+        self.label_42.setPixmap(QPixmap(resource_path(u"usd.png")))
         self.label_42.setScaledContents(True)
         self.label_43 = QLabel(self.tab_3)
         self.label_43.setObjectName(u"label_43")
         self.label_43.setGeometry(QRect(460, 0, 51, 51))
-        self.label_43.setPixmap(QPixmap(u"../logo51.png"))
+        self.label_43.setPixmap(QPixmap(resource_path(u"logo51.png")))
         self.label_43.setScaledContents(True)
+        self.label_37 = QLabel(self.tab_3)
+        self.label_37.setObjectName(u"label_37")
+        self.label_37.setGeometry(QRect(20, 345, 561, 21))
+        font6 = QFont()
+        font6.setFamily(u"Nirmala UI")
+        font6.setPointSize(10)
+        font6.setBold(False)
+        font6.setWeight(50)
+        self.label_37.setFont(font6)
+        self.label_37.setStyleSheet(u"background-color: rgb(235, 235, 0);")
+        self.label_37.setAlignment(Qt.AlignCenter)
         self.tabWidget.addTab(self.tab_3, "")
         self.groupBox_15.raise_()
         self.label_9.raise_()
@@ -155,6 +222,7 @@ class Ui_Object_Detection(object):
         self.frame_3.raise_()
         self.label_42.raise_()
         self.label_43.raise_()
+        self.label_37.raise_()
         self.tab_4 = QWidget()
         self.tab_4.setObjectName(u"tab_4")
         self.groupBox_6 = QGroupBox(self.tab_4)
@@ -233,25 +301,20 @@ class Ui_Object_Detection(object):
         self.btn_predict = QPushButton(self.groupBox_7)
         self.btn_predict.setObjectName(u"btn_predict")
         self.btn_predict.setGeometry(QRect(10, 330, 221, 25))
-        font6 = QFont()
-        font6.setFamily(u"Nirmala UI")
-        font6.setPointSize(10)
-        font6.setBold(True)
-        font6.setWeight(75)
-        self.btn_predict.setFont(font6)
-        self.label_22 = QLabel(self.groupBox_7)
-        self.label_22.setObjectName(u"label_22")
-        self.label_22.setGeometry(QRect(10, 290, 151, 31))
-        self.label_22.setFont(font6)
-        self.ckb_show_rank = QCheckBox(self.groupBox_7)
-        self.ckb_show_rank.setObjectName(u"ckb_show_rank")
-        self.ckb_show_rank.setGeometry(QRect(160, 290, 70, 31))
         font7 = QFont()
         font7.setFamily(u"Nirmala UI")
         font7.setPointSize(10)
-        font7.setBold(False)
-        font7.setWeight(50)
-        self.ckb_show_rank.setFont(font7)
+        font7.setBold(True)
+        font7.setWeight(75)
+        self.btn_predict.setFont(font7)
+        self.label_22 = QLabel(self.groupBox_7)
+        self.label_22.setObjectName(u"label_22")
+        self.label_22.setGeometry(QRect(10, 290, 151, 31))
+        self.label_22.setFont(font7)
+        self.ckb_show_rank = QCheckBox(self.groupBox_7)
+        self.ckb_show_rank.setObjectName(u"ckb_show_rank")
+        self.ckb_show_rank.setGeometry(QRect(160, 290, 70, 31))
+        self.ckb_show_rank.setFont(font6)
         self.ckb_show_rank.setChecked(True)
         self.groupBox_8 = QGroupBox(self.tab_4)
         self.groupBox_8.setObjectName(u"groupBox_8")
@@ -394,7 +457,7 @@ class Ui_Object_Detection(object):
         self.top_predict = QLabel(self.groupBox_11)
         self.top_predict.setObjectName(u"top_predict")
         self.top_predict.setGeometry(QRect(10, 40, 451, 181))
-        self.top_predict.setFont(font6)
+        self.top_predict.setFont(font7)
         self.top_predict.setFrameShape(QFrame.Box)
         self.top_predict.setAlignment(Qt.AlignCenter)
         self.groupBox_12 = QGroupBox(self.groupBox_9)
@@ -408,7 +471,7 @@ class Ui_Object_Detection(object):
         self.filename_input = QLabel(self.groupBox_12)
         self.filename_input.setObjectName(u"filename_input")
         self.filename_input.setGeometry(QRect(10, 30, 451, 31))
-        self.filename_input.setFont(font6)
+        self.filename_input.setFont(font7)
         self.filename_input.setFrameShape(QFrame.Box)
         self.filename_input.setAlignment(Qt.AlignCenter)
         self.lcd_clock_3 = QLCDNumber(self.tab_4)
@@ -426,254 +489,6 @@ class Ui_Object_Detection(object):
         self.textEdit_klasifikasi.setStyleSheet(u"background-color: rgb(255, 247, 247);\n"
 "border-radius:3px;")
         self.tabWidget.addTab(self.tab_4, "")
-        self.tab_5 = QWidget()
-        self.tab_5.setObjectName(u"tab_5")
-        self.groupBox_5 = QGroupBox(self.tab_5)
-        self.groupBox_5.setObjectName(u"groupBox_5")
-        self.groupBox_5.setGeometry(QRect(10, 90, 241, 501))
-        self.gridLayoutWidget_3 = QWidget(self.groupBox_5)
-        self.gridLayoutWidget_3.setObjectName(u"gridLayoutWidget_3")
-        self.gridLayoutWidget_3.setGeometry(QRect(10, 260, 221, 31))
-        self.gridLayout_3 = QGridLayout(self.gridLayoutWidget_3)
-        self.gridLayout_3.setObjectName(u"gridLayout_3")
-        self.gridLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.label_8 = QLabel(self.gridLayoutWidget_3)
-        self.label_8.setObjectName(u"label_8")
-        self.label_8.setFont(font6)
-
-        self.gridLayout_3.addWidget(self.label_8, 0, 0, 1, 1)
-
-        self.ckb_show_predict = QCheckBox(self.gridLayoutWidget_3)
-        self.ckb_show_predict.setObjectName(u"ckb_show_predict")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.ckb_show_predict.sizePolicy().hasHeightForWidth())
-        self.ckb_show_predict.setSizePolicy(sizePolicy1)
-        self.ckb_show_predict.setMinimumSize(QSize(0, 0))
-        self.ckb_show_predict.setSizeIncrement(QSize(0, 0))
-        self.ckb_show_predict.setBaseSize(QSize(0, 0))
-        font9 = QFont()
-        font9.setPointSize(12)
-        font9.setBold(False)
-        font9.setWeight(50)
-        self.ckb_show_predict.setFont(font9)
-        self.ckb_show_predict.setLayoutDirection(Qt.LeftToRight)
-        self.ckb_show_predict.setChecked(True)
-
-        self.gridLayout_3.addWidget(self.ckb_show_predict, 0, 2, 1, 1)
-
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.gridLayout_3.addItem(self.horizontalSpacer, 0, 1, 1, 1)
-
-        self.gridLayoutWidget_2 = QWidget(self.groupBox_5)
-        self.gridLayoutWidget_2.setObjectName(u"gridLayoutWidget_2")
-        self.gridLayoutWidget_2.setGeometry(QRect(10, 20, 223, 211))
-        self.gridLayout_2 = QGridLayout(self.gridLayoutWidget_2)
-        self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.verticalSpacer_5 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.gridLayout_2.addItem(self.verticalSpacer_5, 6, 0, 1, 1)
-
-        self.value_green = QLabel(self.gridLayoutWidget_2)
-        self.value_green.setObjectName(u"value_green")
-        self.value_green.setMinimumSize(QSize(15, 0))
-        self.value_green.setFont(font6)
-        self.value_green.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout_2.addWidget(self.value_green, 3, 2, 1, 1)
-
-        self.verticalSpacer_4 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.gridLayout_2.addItem(self.verticalSpacer_4, 4, 0, 1, 1)
-
-        self.label_4 = QLabel(self.gridLayoutWidget_2)
-        self.label_4.setObjectName(u"label_4")
-        self.label_4.setFont(font6)
-
-        self.gridLayout_2.addWidget(self.label_4, 1, 0, 1, 1)
-
-        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.gridLayout_2.addItem(self.verticalSpacer_2, 2, 0, 1, 1)
-
-        self.slider_green = QSlider(self.gridLayoutWidget_2)
-        self.slider_green.setObjectName(u"slider_green")
-        self.slider_green.setMaximum(255)
-        self.slider_green.setOrientation(Qt.Horizontal)
-
-        self.gridLayout_2.addWidget(self.slider_green, 3, 1, 1, 1)
-
-        self.value_red = QLabel(self.gridLayoutWidget_2)
-        self.value_red.setObjectName(u"value_red")
-        self.value_red.setMinimumSize(QSize(37, 0))
-        self.value_red.setFont(font6)
-        self.value_red.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout_2.addWidget(self.value_red, 1, 2, 1, 1)
-
-        self.verticalSpacer = QSpacerItem(3, 3, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.gridLayout_2.addItem(self.verticalSpacer, 0, 0, 1, 1)
-
-        self.value_blue = QLabel(self.gridLayoutWidget_2)
-        self.value_blue.setObjectName(u"value_blue")
-        self.value_blue.setMinimumSize(QSize(15, 0))
-        self.value_blue.setFont(font6)
-        self.value_blue.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout_2.addWidget(self.value_blue, 5, 2, 1, 1)
-
-        self.slider_red = QSlider(self.gridLayoutWidget_2)
-        self.slider_red.setObjectName(u"slider_red")
-        self.slider_red.setMaximum(255)
-        self.slider_red.setOrientation(Qt.Horizontal)
-
-        self.gridLayout_2.addWidget(self.slider_red, 1, 1, 1, 1)
-
-        self.slider_blue = QSlider(self.gridLayoutWidget_2)
-        self.slider_blue.setObjectName(u"slider_blue")
-        self.slider_blue.setMaximum(255)
-        self.slider_blue.setSliderPosition(0)
-        self.slider_blue.setOrientation(Qt.Horizontal)
-
-        self.gridLayout_2.addWidget(self.slider_blue, 5, 1, 1, 1)
-
-        self.label_6 = QLabel(self.gridLayoutWidget_2)
-        self.label_6.setObjectName(u"label_6")
-        self.label_6.setFont(font6)
-
-        self.gridLayout_2.addWidget(self.label_6, 3, 0, 1, 1)
-
-        self.label_7 = QLabel(self.gridLayoutWidget_2)
-        self.label_7.setObjectName(u"label_7")
-        self.label_7.setFont(font6)
-
-        self.gridLayout_2.addWidget(self.label_7, 5, 0, 1, 1)
-
-        self.btn_reset_rgb = QPushButton(self.gridLayoutWidget_2)
-        self.btn_reset_rgb.setObjectName(u"btn_reset_rgb")
-        self.btn_reset_rgb.setFont(font6)
-
-        self.gridLayout_2.addWidget(self.btn_reset_rgb, 7, 0, 1, 3)
-
-        self.groupBox_3 = QGroupBox(self.tab_5)
-        self.groupBox_3.setObjectName(u"groupBox_3")
-        self.groupBox_3.setGeometry(QRect(260, 80, 661, 511))
-        self.groupBox_3.setStyleSheet(u"background-color: rgb(246, 247, 247);")
-        self.disp_main = QLabel(self.groupBox_3)
-        self.disp_main.setObjectName(u"disp_main")
-        self.disp_main.setGeometry(QRect(10, 20, 640, 480))
-        sizePolicy.setHeightForWidth(self.disp_main.sizePolicy().hasHeightForWidth())
-        self.disp_main.setSizePolicy(sizePolicy)
-        self.disp_main.setMinimumSize(QSize(640, 480))
-        self.disp_main.setStyleSheet(u"background-color: rgb(200, 247, 247);")
-        self.disp_main.setFrameShape(QFrame.StyledPanel)
-        self.disp_main.setFrameShadow(QFrame.Sunken)
-        self.disp_main.setAlignment(Qt.AlignCenter)
-        self.groupBox_4 = QGroupBox(self.tab_5)
-        self.groupBox_4.setObjectName(u"groupBox_4")
-        self.groupBox_4.setGeometry(QRect(930, 0, 251, 591))
-        self.groupBox_4.setStyleSheet(u"background-color: rgb(246, 247, 247);")
-        self.textEdit = QTextEdit(self.groupBox_4)
-        self.textEdit.setObjectName(u"textEdit")
-        self.textEdit.setGeometry(QRect(10, 20, 231, 561))
-        self.textEdit.setStyleSheet(u"background-color: rgb(246, 247, 247);\n"
-"border-radius:3px;")
-        self.lcd_clock = QLCDNumber(self.tab_5)
-        self.lcd_clock.setObjectName(u"lcd_clock")
-        self.lcd_clock.setGeometry(QRect(720, 10, 201, 71))
-        self.lcd_clock.setStyleSheet(u"background-color: rgb(246, 247, 247);")
-        self.lcd_clock.setDigitCount(8)
-        self.groupBox_2 = QGroupBox(self.tab_5)
-        self.groupBox_2.setObjectName(u"groupBox_2")
-        self.groupBox_2.setGeometry(QRect(450, 10, 261, 71))
-        self.groupBox_2.setStyleSheet(u"background-color: rgb(246, 247, 247);")
-        self.gridLayoutWidget = QWidget(self.groupBox_2)
-        self.gridLayoutWidget.setObjectName(u"gridLayoutWidget")
-        self.gridLayoutWidget.setGeometry(QRect(10, 10, 241, 51))
-        self.gridLayout = QGridLayout(self.gridLayoutWidget)
-        self.gridLayout.setObjectName(u"gridLayout")
-        self.gridLayout.setVerticalSpacing(0)
-        self.gridLayout.setContentsMargins(0, 0, 0, 0)
-        self.Qlabel_cpu = QLabel(self.gridLayoutWidget)
-        self.Qlabel_cpu.setObjectName(u"Qlabel_cpu")
-        font10 = QFont()
-        font10.setPointSize(10)
-        font10.setBold(True)
-        font10.setWeight(75)
-        self.Qlabel_cpu.setFont(font10)
-        self.Qlabel_cpu.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout.addWidget(self.Qlabel_cpu, 1, 1, 1, 1)
-
-        self.label_3 = QLabel(self.gridLayoutWidget)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setFont(font10)
-        self.label_3.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout.addWidget(self.label_3, 0, 1, 1, 1)
-
-        self.label_2 = QLabel(self.gridLayoutWidget)
-        self.label_2.setObjectName(u"label_2")
-        self.label_2.setFont(font10)
-        self.label_2.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout.addWidget(self.label_2, 0, 0, 1, 1)
-
-        self.Qlabel_fps = QLabel(self.gridLayoutWidget)
-        self.Qlabel_fps.setObjectName(u"Qlabel_fps")
-        self.Qlabel_fps.setFont(font10)
-        self.Qlabel_fps.setStyleSheet(u"color: rgb(237, 85, 59);")
-        self.Qlabel_fps.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout.addWidget(self.Qlabel_fps, 1, 0, 1, 1)
-
-        self.label_5 = QLabel(self.gridLayoutWidget)
-        self.label_5.setObjectName(u"label_5")
-        self.label_5.setFont(font10)
-        self.label_5.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout.addWidget(self.label_5, 0, 2, 1, 1)
-
-        self.Qlabel_ram = QLabel(self.gridLayoutWidget)
-        self.Qlabel_ram.setObjectName(u"Qlabel_ram")
-        self.Qlabel_ram.setFont(font10)
-        self.Qlabel_ram.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout.addWidget(self.Qlabel_ram, 1, 2, 1, 1)
-
-        self.groupBox = QGroupBox(self.tab_5)
-        self.groupBox.setObjectName(u"groupBox")
-        self.groupBox.setGeometry(QRect(10, 10, 431, 71))
-        self.groupBox.setStyleSheet(u"background-color: rgb(246, 247, 247);")
-        self.label = QLabel(self.groupBox)
-        self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(10, 10, 51, 51))
-        self.label.setFont(font2)
-        self.label.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
-        self.camlist = QComboBox(self.groupBox)
-        self.camlist.setObjectName(u"camlist")
-        self.camlist.setGeometry(QRect(70, 10, 133, 51))
-        self.camlist.setMinimumSize(QSize(133, 10))
-        self.camlist.setMaximumSize(QSize(100, 16777215))
-        self.camlist.setFont(font2)
-        self.camlist.setStyleSheet(u"background-color: rgb(255, 255, 255);")
-        self.btn_start = QPushButton(self.groupBox)
-        self.btn_start.setObjectName(u"btn_start")
-        self.btn_start.setGeometry(QRect(210, 10, 100, 51))
-        self.btn_start.setMinimumSize(QSize(100, 0))
-        self.btn_start.setFont(font2)
-        self.btn_start.setStyleSheet(u"background-color: rgb(255, 255, 255);")
-        self.btn_stop = QPushButton(self.groupBox)
-        self.btn_stop.setObjectName(u"btn_stop")
-        self.btn_stop.setGeometry(QRect(320, 10, 100, 51))
-        self.btn_stop.setMinimumSize(QSize(100, 0))
-        self.btn_stop.setFont(font2)
-        self.btn_stop.setStyleSheet(u"background-color: rgb(255, 255, 255);")
-        self.tabWidget.addTab(self.tab_5, "")
         self.tab_6 = QWidget()
         self.tab_6.setObjectName(u"tab_6")
         self.frame = QFrame(self.tab_6)
@@ -685,31 +500,31 @@ class Ui_Object_Detection(object):
         self.label_10 = QLabel(self.frame)
         self.label_10.setObjectName(u"label_10")
         self.label_10.setGeometry(QRect(10, 340, 351, 21))
-        font11 = QFont()
-        font11.setFamily(u"Nirmala UI")
-        font11.setPointSize(16)
-        font11.setBold(True)
-        font11.setWeight(75)
-        self.label_10.setFont(font11)
+        font9 = QFont()
+        font9.setFamily(u"Nirmala UI")
+        font9.setPointSize(16)
+        font9.setBold(True)
+        font9.setWeight(75)
+        self.label_10.setFont(font9)
         self.label_10.setStyleSheet(u"")
         self.label_10.setAlignment(Qt.AlignCenter)
         self.label_11 = QLabel(self.frame)
         self.label_11.setObjectName(u"label_11")
         self.label_11.setGeometry(QRect(10, 360, 351, 31))
-        font12 = QFont()
-        font12.setFamily(u"Nirmala UI")
-        font12.setPointSize(11)
-        font12.setBold(False)
-        font12.setWeight(50)
-        self.label_11.setFont(font12)
+        font10 = QFont()
+        font10.setFamily(u"Nirmala UI")
+        font10.setPointSize(11)
+        font10.setBold(False)
+        font10.setWeight(50)
+        self.label_11.setFont(font10)
         self.label_11.setStyleSheet(u"")
         self.label_11.setAlignment(Qt.AlignCenter)
         self.frame_16 = QFrame(self.frame)
         self.frame_16.setObjectName(u"frame_16")
         self.frame_16.setGeometry(QRect(80, 110, 220, 220))
-        font13 = QFont()
-        font13.setPointSize(7)
-        self.frame_16.setFont(font13)
+        font11 = QFont()
+        font11.setPointSize(7)
+        self.frame_16.setFont(font11)
         self.frame_16.setStyleSheet(u"border-radius:100px;\n"
 "background-color: rgb(194, 194, 194);")
         self.frame_16.setFrameShape(QFrame.Box)
@@ -718,7 +533,7 @@ class Ui_Object_Detection(object):
         self.label_38 = QLabel(self.frame_16)
         self.label_38.setObjectName(u"label_38")
         self.label_38.setGeometry(QRect(10, 10, 200, 200))
-        self.label_38.setPixmap(QPixmap(u"../me.png"))
+        self.label_38.setPixmap(QPixmap(resource_path(u"me.png")))
         self.label_38.setScaledContents(True)
         self.frame_2 = QFrame(self.tab_6)
         self.frame_2.setObjectName(u"frame_2")
@@ -728,27 +543,27 @@ class Ui_Object_Detection(object):
         self.label_12 = QLabel(self.frame_2)
         self.label_12.setObjectName(u"label_12")
         self.label_12.setGeometry(QRect(50, 90, 431, 31))
-        font14 = QFont()
-        font14.setFamily(u"Times New Roman")
-        font14.setPointSize(17)
-        self.label_12.setFont(font14)
+        font12 = QFont()
+        font12.setFamily(u"Times New Roman")
+        font12.setPointSize(17)
+        self.label_12.setFont(font12)
         self.label_13 = QLabel(self.frame_2)
         self.label_13.setObjectName(u"label_13")
         self.label_13.setGeometry(QRect(50, 120, 571, 31))
-        self.label_13.setFont(font14)
+        self.label_13.setFont(font12)
         self.label_14 = QLabel(self.frame_2)
         self.label_14.setObjectName(u"label_14")
         self.label_14.setGeometry(QRect(50, 160, 731, 151))
-        self.label_14.setFont(font14)
+        self.label_14.setFont(font12)
         self.label_14.setWordWrap(True)
         self.label_17 = QLabel(self.frame_2)
         self.label_17.setObjectName(u"label_17")
         self.label_17.setGeometry(QRect(50, 440, 751, 31))
-        self.label_17.setFont(font14)
+        self.label_17.setFont(font12)
         self.frame_5 = QFrame(self.frame_2)
         self.frame_5.setObjectName(u"frame_5")
         self.frame_5.setGeometry(QRect(120, 480, 51, 51))
-        self.frame_5.setFont(font13)
+        self.frame_5.setFont(font11)
         self.frame_5.setStyleSheet(u"border-radius:20px;\n"
 "background-color: rgb(194, 194, 194);")
         self.frame_5.setFrameShape(QFrame.Box)
@@ -757,12 +572,12 @@ class Ui_Object_Detection(object):
         self.label_20 = QLabel(self.frame_5)
         self.label_20.setObjectName(u"label_20")
         self.label_20.setGeometry(QRect(10, 10, 31, 31))
-        self.label_20.setPixmap(QPixmap(u"../laravel.png"))
+        self.label_20.setPixmap(QPixmap(resource_path(u"laravel.png")))
         self.label_20.setScaledContents(True)
         self.frame_6 = QFrame(self.frame_2)
         self.frame_6.setObjectName(u"frame_6")
         self.frame_6.setGeometry(QRect(190, 480, 51, 51))
-        self.frame_6.setFont(font13)
+        self.frame_6.setFont(font11)
         self.frame_6.setStyleSheet(u"border-radius:20px;\n"
 "background-color: rgb(194, 194, 194);")
         self.frame_6.setFrameShape(QFrame.Box)
@@ -771,12 +586,12 @@ class Ui_Object_Detection(object):
         self.label_21 = QLabel(self.frame_6)
         self.label_21.setObjectName(u"label_21")
         self.label_21.setGeometry(QRect(10, 10, 31, 31))
-        self.label_21.setPixmap(QPixmap(u"../git.png"))
+        self.label_21.setPixmap(QPixmap(resource_path(u"git.png")))
         self.label_21.setScaledContents(True)
         self.frame_9 = QFrame(self.frame_2)
         self.frame_9.setObjectName(u"frame_9")
         self.frame_9.setGeometry(QRect(330, 480, 51, 51))
-        self.frame_9.setFont(font13)
+        self.frame_9.setFont(font11)
         self.frame_9.setStyleSheet(u"border-radius:20px;\n"
 "background-color: rgb(194, 194, 194);")
         self.frame_9.setFrameShape(QFrame.Box)
@@ -785,12 +600,12 @@ class Ui_Object_Detection(object):
         self.label_24 = QLabel(self.frame_9)
         self.label_24.setObjectName(u"label_24")
         self.label_24.setGeometry(QRect(10, 10, 31, 31))
-        self.label_24.setPixmap(QPixmap(u"../mongodb.png"))
+        self.label_24.setPixmap(QPixmap(resource_path(u"mongodb.png")))
         self.label_24.setScaledContents(True)
         self.frame_10 = QFrame(self.frame_2)
         self.frame_10.setObjectName(u"frame_10")
         self.frame_10.setGeometry(QRect(400, 480, 51, 51))
-        self.frame_10.setFont(font13)
+        self.frame_10.setFont(font11)
         self.frame_10.setStyleSheet(u"border-radius:20px;\n"
 "background-color: rgb(194, 194, 194);")
         self.frame_10.setFrameShape(QFrame.Box)
@@ -799,12 +614,12 @@ class Ui_Object_Detection(object):
         self.label_25 = QLabel(self.frame_10)
         self.label_25.setObjectName(u"label_25")
         self.label_25.setGeometry(QRect(10, 10, 31, 31))
-        self.label_25.setPixmap(QPixmap(u"../sql.png"))
+        self.label_25.setPixmap(QPixmap(resource_path(u"sql.png")))
         self.label_25.setScaledContents(True)
         self.frame_11 = QFrame(self.frame_2)
         self.frame_11.setObjectName(u"frame_11")
         self.frame_11.setGeometry(QRect(470, 480, 51, 51))
-        self.frame_11.setFont(font13)
+        self.frame_11.setFont(font11)
         self.frame_11.setStyleSheet(u"border-radius:20px;\n"
 "background-color: rgb(194, 194, 194);")
         self.frame_11.setFrameShape(QFrame.Box)
@@ -813,12 +628,12 @@ class Ui_Object_Detection(object):
         self.label_27 = QLabel(self.frame_11)
         self.label_27.setObjectName(u"label_27")
         self.label_27.setGeometry(QRect(10, 10, 31, 31))
-        self.label_27.setPixmap(QPixmap(u"../nodejs.png"))
+        self.label_27.setPixmap(QPixmap(resource_path(u"nodejs.png")))
         self.label_27.setScaledContents(True)
         self.frame_12 = QFrame(self.frame_2)
         self.frame_12.setObjectName(u"frame_12")
         self.frame_12.setGeometry(QRect(540, 480, 51, 51))
-        self.frame_12.setFont(font13)
+        self.frame_12.setFont(font11)
         self.frame_12.setStyleSheet(u"border-radius:20px;\n"
 "background-color: rgb(194, 194, 194);")
         self.frame_12.setFrameShape(QFrame.Box)
@@ -827,12 +642,12 @@ class Ui_Object_Detection(object):
         self.label_28 = QLabel(self.frame_12)
         self.label_28.setObjectName(u"label_28")
         self.label_28.setGeometry(QRect(10, 10, 31, 31))
-        self.label_28.setPixmap(QPixmap(u"../terminal.png"))
+        self.label_28.setPixmap(QPixmap(resource_path(u"terminal.png")))
         self.label_28.setScaledContents(True)
         self.frame_4 = QFrame(self.frame_2)
         self.frame_4.setObjectName(u"frame_4")
         self.frame_4.setGeometry(QRect(50, 480, 51, 51))
-        self.frame_4.setFont(font13)
+        self.frame_4.setFont(font11)
         self.frame_4.setStyleSheet(u"border-radius:20px;\n"
 "background-color: rgb(194, 194, 194);")
         self.frame_4.setFrameShape(QFrame.Box)
@@ -841,12 +656,12 @@ class Ui_Object_Detection(object):
         self.label_19 = QLabel(self.frame_4)
         self.label_19.setObjectName(u"label_19")
         self.label_19.setGeometry(QRect(10, 10, 31, 31))
-        self.label_19.setPixmap(QPixmap(u"../python.png"))
+        self.label_19.setPixmap(QPixmap(resource_path(u"python.png")))
         self.label_19.setScaledContents(True)
         self.frame_8 = QFrame(self.frame_2)
         self.frame_8.setObjectName(u"frame_8")
         self.frame_8.setGeometry(QRect(260, 480, 51, 51))
-        self.frame_8.setFont(font13)
+        self.frame_8.setFont(font11)
         self.frame_8.setStyleSheet(u"border-radius:20px;\n"
 "background-color: rgb(194, 194, 194);")
         self.frame_8.setFrameShape(QFrame.Box)
@@ -855,17 +670,17 @@ class Ui_Object_Detection(object):
         self.label_23 = QLabel(self.frame_8)
         self.label_23.setObjectName(u"label_23")
         self.label_23.setGeometry(QRect(10, 10, 31, 31))
-        self.label_23.setPixmap(QPixmap(u"../java.png"))
+        self.label_23.setPixmap(QPixmap(resource_path(u"java.png")))
         self.label_23.setScaledContents(True)
         self.label_31 = QLabel(self.frame_2)
         self.label_31.setObjectName(u"label_31")
         self.label_31.setGeometry(QRect(50, 320, 741, 91))
-        self.label_31.setFont(font14)
+        self.label_31.setFont(font12)
         self.label_31.setWordWrap(True)
         self.frame_13 = QFrame(self.frame_2)
         self.frame_13.setObjectName(u"frame_13")
         self.frame_13.setGeometry(QRect(610, 480, 51, 51))
-        self.frame_13.setFont(font13)
+        self.frame_13.setFont(font11)
         self.frame_13.setStyleSheet(u"border-radius:20px;\n"
 "background-color: rgb(194, 194, 194);")
         self.frame_13.setFrameShape(QFrame.Box)
@@ -874,12 +689,12 @@ class Ui_Object_Detection(object):
         self.label_32 = QLabel(self.frame_13)
         self.label_32.setObjectName(u"label_32")
         self.label_32.setGeometry(QRect(10, 10, 31, 31))
-        self.label_32.setPixmap(QPixmap(u"../qt.png"))
+        self.label_32.setPixmap(QPixmap(resource_path(u"qt.png")))
         self.label_32.setScaledContents(True)
         self.frame_14 = QFrame(self.frame_2)
         self.frame_14.setObjectName(u"frame_14")
         self.frame_14.setGeometry(QRect(680, 480, 51, 51))
-        self.frame_14.setFont(font13)
+        self.frame_14.setFont(font11)
         self.frame_14.setStyleSheet(u"border-radius:20px;\n"
 "background-color: rgb(194, 194, 194);")
         self.frame_14.setFrameShape(QFrame.Box)
@@ -888,7 +703,7 @@ class Ui_Object_Detection(object):
         self.label_33 = QLabel(self.frame_14)
         self.label_33.setObjectName(u"label_33")
         self.label_33.setGeometry(QRect(10, 10, 31, 31))
-        self.label_33.setPixmap(QPixmap(u"../cursor.svg"))
+        self.label_33.setPixmap(QPixmap(resource_path(u"cursor.svg")))
         self.label_33.setScaledContents(True)
         self.lcd_clock_2 = QLCDNumber(self.frame_2)
         self.lcd_clock_2.setObjectName(u"lcd_clock_2")
@@ -900,17 +715,271 @@ class Ui_Object_Detection(object):
         self.statusbar = QStatusBar(Object_Detection)
         self.statusbar.setObjectName(u"statusbar")
         Object_Detection.setStatusBar(self.statusbar)
+        
+        # ===================================================================================
+        # Bagian TAB 1 | Home
+        # ===================================================================================
+        Object_Detection.setWindowIcon(QtGui.QIcon(resource_path('logo.png')))
+        Object_Detection.resize(1193, 696)
+        Object_Detection.setStyleSheet(u"background-color: rgb(237, 250, 239);")
+        Object_Detection.setToolButtonStyle(Qt.ToolButtonTextBesideIcon)
+        
+        # Setup QTimer
+        self.lcd_timer = QTimer()
+        self.lcd_timer.timeout.connect(self.clock)
+        self.lcd_timer.start()
+        
+        # ===================================================================================
+        # Bagian TAB 2 | Klasification
+        # ===================================================================================
+        # masalah file
+        self.file_ready = ""
+        # self.btn_resource_storage.clicked.connect(self.resource_storage)
+        self.btn_resource_storage.clicked.connect(lambda: self.resource_storage(Object_Detection))
+        self.btn_clear_klasifikasi.setEnabled(False)
+        self.btn_clear_klasifikasi.clicked.connect(self.clear_klasifikasi)
+        self.btn_predict.clicked.connect(self.klasifikasi_aksara)
+        self.btn_predict.setEnabled(False)  # Initially disable the predict button
+        self.ckb_show_rank.stateChanged.connect(self.show_rank)
+        self.clear_rank_result()
+        
+        # Connect checkbox state changes to enable/disable predict button
+        self.ckb_densenet.setEnabled(False)
+        self.ckb_efficientnet.setEnabled(False)
+        self.ckb_inception.setEnabled(False)
+        self.ckb_mobilenet.setEnabled(False)
+        self.ckb_restnet.setEnabled(False)
+        self.ckb_vgg.setEnabled(False)
+        self.ckb_xception.setEnabled(False)
+        
+        self.ckb_densenet.stateChanged.connect(self.update_predict_button_state)
+        self.ckb_efficientnet.stateChanged.connect(self.update_predict_button_state)
+        self.ckb_inception.stateChanged.connect(self.update_predict_button_state)
+        self.ckb_mobilenet.stateChanged.connect(self.update_predict_button_state)
+        self.ckb_restnet.stateChanged.connect(self.update_predict_button_state)
+        self.ckb_vgg.stateChanged.connect(self.update_predict_button_state)
+        self.ckb_xception.stateChanged.connect(self.update_predict_button_state)
+        
+        self.lcd_timer = QTimer()
+        self.lcd_timer.timeout.connect(self.clock)
+        self.lcd_timer.start() 
+        
+        self.model_densenet = None
+        self.model_efficientnet = None
+        self.model_inception = None
+        self.model_mobilenet = None
+        self.model_restnet = None
+        self.model_vgg = None
+        self.model_xception = None
 
         self.retranslateUi(Object_Detection)
-        self.slider_red.valueChanged.connect(self.value_red.setNum)
-        self.slider_blue.valueChanged.connect(self.value_blue.setNum)
-        self.slider_green.valueChanged.connect(self.value_green.setNum)
-
         self.tabWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(Object_Detection)
     # setupUi
+    
+    # ====================================================================================
+    # Bagian Setting All
+    # ====================================================================================
+    
+    # ====================================================================================
+    # Bagian TAB 2 | Klasification
+    # ====================================================================================
+    def update_predict_button_state(self):
+        # Enable the predict button if any model checkbox is checked
+        self.btn_predict.setEnabled(
+            self.ckb_densenet.isChecked() or
+            self.ckb_efficientnet.isChecked() or
+            self.ckb_inception.isChecked() or
+            self.ckb_mobilenet.isChecked() or
+            self.ckb_restnet.isChecked() or
+            self.ckb_vgg.isChecked() or
+            self.ckb_xception.isChecked()
+        )
+    
+    def resource_storage(self,MainWindow):
+        fname = QFileDialog.getOpenFileName(MainWindow, 'Open File', 'C:', 'Image Files (*.png *.jpg *.jpeg)')
+        if fname[0]:
+            self.textEdit_klasifikasi.append(f"{QDateTime.currentDateTime().toString('d MMMM yy hh:mm:ss')}: File loaded: {fname[0]}")
+            self.file_ready = fname[0]
+            self.show_image()
+            self.ckb_densenet.setEnabled(True)
+            self.ckb_efficientnet.setEnabled(True)
+            self.ckb_inception.setEnabled(True)
+            self.ckb_mobilenet.setEnabled(True)
+            self.ckb_restnet.setEnabled(True)
+            self.ckb_vgg.setEnabled(True)
+            self.ckb_xception.setEnabled(True)
+            self.btn_clear_klasifikasi.setEnabled(True)
+        else:
+            self.textEdit_klasifikasi.append(f"{QDateTime.currentDateTime().toString('d MMMM yy hh:mm:ss')}: No file selected")
+        
+    def show_image(self):
+        self.filename_input.setText(self.file_ready)
+        self.img = cv2.imread(self.file_ready)
+        self.img = cv2.resize(self.img, (400,400))
+        self.img = cv2.cvtColor(self.img, cv2.COLOR_BGR2RGB)
+        h, w, ch = self.img.shape
+        bytes_per_line = ch * w
+        convert_to_Qt_format = QImage(self.img.data, w, h, bytes_per_line, QImage.Format_RGB888)
+        pixmap = QPixmap.fromImage(convert_to_Qt_format)
+        self.disp_klasifikasi.setPixmap(pixmap)
+        self.disp_klasifikasi.setScaledContents(True)
+        self.disp_klasifikasi.setFixedSize(400, 400)
+        
+    def klasifikasi_aksara(self):
+        arr_pred = []
+        if self.ckb_densenet.isChecked():
+            self.textEdit_klasifikasi.append(f"{QDateTime.currentDateTime().toString('d MMMM yy hh:mm:ss')}: Proses predict from model DenseNet121 | Load model success")
+            model = model_densenet
+            predict_class, skor = self.klasifikasi(model)
+            self.model_densenet = model
+            arr_pred.append([predict_class, skor,"DenseNet121"])
+            
+        if self.ckb_efficientnet.isChecked():
+            self.textEdit_klasifikasi.append(f"{QDateTime.currentDateTime().toString('d MMMM yy hh:mm:ss')}: Proses predict from model Efficientnet | Load model success")
+            model = model_efficientnet
+            predict_class, skor = self.klasifikasi(model)
+            self.model_efficientnet = model
+            arr_pred.append([predict_class, skor,"EfficientNet"])
+            
+        if self.ckb_inception.isChecked():
+            self.textEdit_klasifikasi.append(f"{QDateTime.currentDateTime().toString('d MMMM yy hh:mm:ss')}: Proses predict from model Inception | Load model success")
+            model = model_inception
+            predict_class, skor = self.klasifikasi(model)
+            self.model_inception = model
+            arr_pred.append([predict_class, skor,"Inception"])
+            
+        if self.ckb_mobilenet.isChecked():
+            self.textEdit_klasifikasi.append(f"{QDateTime.currentDateTime().toString('d MMMM yy hh:mm:ss')}: Proses predict from model MobileNetV2 | Load model success")
+            model = model_mobilenet
+            predict_class, skor = self.klasifikasi(model)
+            self.model_mobilenet = model
+            arr_pred.append([predict_class, skor,"MobileNetV2"])
+            
+        if self.ckb_restnet.isChecked():
+            self.textEdit_klasifikasi.append(f"{QDateTime.currentDateTime().toString('d MMMM yy hh:mm:ss')}: Proses predict from model RestNet50 | Load model success")
+            model = model_resnet
+            predict_class, skor = self.klasifikasi(model)
+            self.model_restnet = model
+            arr_pred.append([predict_class, skor,"RestNet50"])
+
+        if self.ckb_vgg.isChecked():
+            self.textEdit_klasifikasi.append(f"{QDateTime.currentDateTime().toString('d MMMM yy hh:mm:ss')}: Proses predict from model VGG16 | Load model success")
+            model = model_vgg
+            predict_class, skor = self.klasifikasi(model)
+            self.model_vgg = model
+            arr_pred.append([predict_class, skor,"VGG16"])
+
+        if self.ckb_xception.isChecked():
+            self.textEdit_klasifikasi.append(f"{QDateTime.currentDateTime().toString('d MMMM yy hh:mm:ss')}: Proses predict from model Xception | Load model success")
+            model = model_xception
+            predict_class, skor = self.klasifikasi(model)
+            self.model_xception = model
+            arr_pred.append([predict_class, skor,"Xception"])
+
+        
+        if len(arr_pred) > 1:
+            max_value = max(arr_pred, key=lambda x: float(x[1]))
+            top_label = max_value[0]
+            top_nilai = max_value[1]
+            top_model = max_value[2]
+            print(top_label,top_nilai,top_model)
+            self.top_predict.setText(f"Model Name : {top_model} \n Label : {top_label} \n Confidence : {top_nilai}")
+            
+            arr_pred_sorted = sorted(arr_pred, key=lambda x: float(x[1]), reverse=True)
+            
+            if self.ckb_show_rank.isChecked():
+                rank_title = [self.rank_1, self.rank_2, self.rank_3, self.rank_4, self.rank_5, self.rank_6, self.rank_7]
+                rank_result = [self.result_rank_1, self.result_rank_2, self.result_rank_3, self.result_rank_4, self.result_rank_5, self.result_rank_6, self.result_rank_7]
+                for i, (title, label) in enumerate(zip(rank_title, rank_result)):
+                    
+                    if i < len(arr_pred_sorted):
+                        title.setVisible(True)
+                        label.setVisible(True)
+                        title.setText(f"Rank {i+1}")
+                        label.setText(f"{arr_pred_sorted[i][2]} \n {arr_pred_sorted[i][0]} \n {arr_pred_sorted[i][1]}")
+                    else:
+                        title.setVisible(False)
+                        label.setVisible(False)
+                        
+        elif len(arr_pred) == 1:
+            rank_title = [self.rank_1, self.rank_2, self.rank_3, self.rank_4, self.rank_5, self.rank_6, self.rank_7]
+            rank_result = [self.result_rank_1, self.result_rank_2, self.result_rank_3, self.result_rank_4, self.result_rank_5, self.result_rank_6, self.result_rank_7]
+            for i, (title, label) in enumerate(zip(rank_title, rank_result)):
+                title.setVisible(False)
+                label.setVisible(False)
+            label_terbesar = arr_pred[0][0]
+            nilai_terbesar = arr_pred[0][1]
+            model_name = arr_pred[0][2]
+            self.top_predict.setText(f"Model Name : {model_name} \n Label : {label_terbesar} \n Confidence : {nilai_terbesar}")
+            
+        arr_pred.clear()
+        
+    def clear_rank_result(self):
+        self.top_predict.setText("")
+        rank_result = [self.result_rank_1, self.result_rank_2, self.result_rank_3, self.result_rank_4, self.result_rank_5, self.result_rank_6, self.result_rank_7]
+        for label in rank_result:
+            label.setText("")
+        
+    def clear_klasifikasi(self):
+        self.filename_input.setText("")
+        self.clear_rank_result()
+        self.ckb_densenet.setEnabled(False)
+        self.ckb_efficientnet.setEnabled(False)
+        self.ckb_inception.setEnabled(False)
+        self.ckb_mobilenet.setEnabled(False)
+        self.ckb_restnet.setEnabled(False)
+        self.ckb_vgg.setEnabled(False)
+        self.ckb_xception.setEnabled(False)
+        self.btn_predict.setEnabled(False)
+        self.file_ready= ""
+        self.btn_clear_klasifikasi.setEnabled(False)
+        
+    def show_rank(self):
+        pass
+        # if self.ckb_show_rank.isChecked():
+            # self.result_rank_1.setText(f"{max_value[i][2]} \n {max_value[i][0]} \n {max_value[i][1]}")
+            
+    
+    def klasifikasi(self,model):
+        size = (224, 224)
+        self.textEdit_klasifikasi.append(f"{QDateTime.currentDateTime().toString('d MMMM yy hh:mm:ss')}: Proses predict | Read image resource")
+        image_loaded = Image.open(self.file_ready).convert("RGB")
+        image = ImageOps.fit(image_loaded, size, Image.Resampling.LANCZOS)
+
+        # convert image to array
+        image_array = np.asarray(image)
+
+        # Normalize the image
+        normalized_image_array = (image_array.astype(np.float32) / 127.5) - 1
+
+        # set model input
+        data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
+
+        # Load the image into the array
+        data[0] = normalized_image_array
+
+        prediction = model.predict(data)
+        index = np.argmax(prediction)
+        predict_class = labels_klasifikasi[index]
+        confidence_score = prediction[0][index]
+        skor_dua_angka = "{:.2f}".format(confidence_score)
+        return predict_class,skor_dua_angka
+        
+    def getRAM_usage(self,ram):
+        self.Qlabel_ram.setText(str(ram[2]) + " %")
+        if ram[2] > 15: self.Qlabel_ram.setStyleSheet("color: rgb(23, 63, 95);")
+        if ram[2] > 25: self.Qlabel_ram.setStyleSheet("color: rgb(32, 99, 155);")
+        if ram[2] > 45: self.Qlabel_ram.setStyleSheet("color: rgb(60, 174, 163);")
+        if ram[2] > 65: self.Qlabel_ram.setStyleSheet("color: rgb(246, 213, 92);")
+        if ram[2] > 85: self.Qlabel_ram.setStyleSheet("color: rgb(237, 85, 59);")
+    
+    def clock(self):
+        self.DateTime = QDateTime.currentDateTime()
+        self.lcd_clock_2.display(self.DateTime.toString('hh:mm:ss'))
+        self.lcd_clock_3.display(self.DateTime.toString('hh:mm:ss'))
 
     def retranslateUi(self, Object_Detection):
         Object_Detection.setWindowTitle(QCoreApplication.translate("Object_Detection", u"Object Detection", None))
@@ -924,7 +993,7 @@ class Ui_Object_Detection(object):
 "    Neural Network (CNN) algorithm.\n"
 "4. Contribute to overcoming students' difficulties in learning Javanese script using Augmented Reality \n"
 "    technology", None))
-        self.groupBox_15.setTitle(QCoreApplication.translate("Object_Detection", u"JawaLearn Application Features", None))
+        self.groupBox_15.setTitle(QCoreApplication.translate("Object_Detection", u"JawaLearn Application Features ", None))
         self.label_26.setText(QCoreApplication.translate("Object_Detection", u"AR Detection of Javanese Script", None))
         self.label_30.setText(QCoreApplication.translate("Object_Detection", u"This feature can be used to transliterate Javanese LEGENA characters with real-time detection using the available camera. This feature gives meaning to the characters placed in front of the camera.", None))
         self.label_16.setText(QCoreApplication.translate("Object_Detection", u"Classification of Javanese Script", None))
@@ -936,6 +1005,7 @@ class Ui_Object_Detection(object):
         self.label_41.setText("")
         self.label_42.setText("")
         self.label_43.setText("")
+        self.label_37.setText(QCoreApplication.translate("Object_Detection", u"This version of the application only provides Javanese script image classification features", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("Object_Detection", u"Home", None))
         self.groupBox_6.setTitle("")
         self.label_18.setText(QCoreApplication.translate("Object_Detection", u"Resource", None))
@@ -978,31 +1048,6 @@ class Ui_Object_Detection(object):
         self.filename_input.setText("")
         self.groupBox_10.setTitle(QCoreApplication.translate("Object_Detection", u"LOG", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), QCoreApplication.translate("Object_Detection", u"Klasifikasi Aksara", None))
-        self.groupBox_5.setTitle(QCoreApplication.translate("Object_Detection", u"Setting", None))
-        self.label_8.setText(QCoreApplication.translate("Object_Detection", u"SHOW PREDICTION :", None))
-        self.ckb_show_predict.setText(QCoreApplication.translate("Object_Detection", u"Active", None))
-        self.value_green.setText(QCoreApplication.translate("Object_Detection", u"0", None))
-        self.label_4.setText(QCoreApplication.translate("Object_Detection", u"RED  :", None))
-        self.value_red.setText(QCoreApplication.translate("Object_Detection", u"0", None))
-        self.value_blue.setText(QCoreApplication.translate("Object_Detection", u"0", None))
-        self.label_6.setText(QCoreApplication.translate("Object_Detection", u"GREEN :", None))
-        self.label_7.setText(QCoreApplication.translate("Object_Detection", u"BLUE :", None))
-        self.btn_reset_rgb.setText(QCoreApplication.translate("Object_Detection", u"RESET", None))
-        self.groupBox_3.setTitle(QCoreApplication.translate("Object_Detection", u"MAIN WINDOW", None))
-        self.disp_main.setText("")
-        self.groupBox_4.setTitle(QCoreApplication.translate("Object_Detection", u"LOG", None))
-        self.groupBox_2.setTitle("")
-        self.Qlabel_cpu.setText(QCoreApplication.translate("Object_Detection", u"0.0", None))
-        self.label_3.setText(QCoreApplication.translate("Object_Detection", u"CPU", None))
-        self.label_2.setText(QCoreApplication.translate("Object_Detection", u"FPS", None))
-        self.Qlabel_fps.setText(QCoreApplication.translate("Object_Detection", u"0.0", None))
-        self.label_5.setText(QCoreApplication.translate("Object_Detection", u"RAM", None))
-        self.Qlabel_ram.setText(QCoreApplication.translate("Object_Detection", u"0.0", None))
-        self.groupBox.setTitle("")
-        self.label.setText(QCoreApplication.translate("Object_Detection", u"Camera", None))
-        self.btn_start.setText(QCoreApplication.translate("Object_Detection", u"START", None))
-        self.btn_stop.setText(QCoreApplication.translate("Object_Detection", u"STOP", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_5), QCoreApplication.translate("Object_Detection", u"AR Jawa Learn", None))
         self.label_10.setText(QCoreApplication.translate("Object_Detection", u"FX. BIMA YUDHA PRATAMA", None))
         self.label_11.setText(QCoreApplication.translate("Object_Detection", u"Informatika Angkaatan 20", None))
         self.label_38.setText("")
@@ -1024,3 +1069,15 @@ class Ui_Object_Detection(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_6), QCoreApplication.translate("Object_Detection", u"About Me", None))
     # retranslateUi
 
+if __name__ == "__main__":
+    # app = QtWidgets.QApplication(sys.argv)
+    # MainWindow = QtWidgets.QMainWindow()
+    # ui = Ui_Object_Detection()
+    # ui.setupUi(MainWindow)
+    # MainWindow.show()
+    # sys.exit(app.exec_())
+    app = QApplication(sys.argv)
+    main_window = MainWindow()
+    main_window.show()
+    main_window.center()
+    sys.exit(app.exec_())
